@@ -144,6 +144,9 @@ function HomePage() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const currentTestimonial = testimonials[testimonial];
+  if (!currentTestimonial) return null;
+
   return (
     <main className="overflow-x-clip bg-background">
       <header className={`site-header ${scrolled ? "site-header-scrolled" : ""}`}>
@@ -283,7 +286,7 @@ function HomePage() {
           <div className="testimonial-heading"><SectionTitle eyebrow="Parent Stories" title="What Our Parents Say" copy="Trusted by families. Loved by students." /></div>
           <div className="testimonial-row">
             <Button variant="outline" size="icon" aria-label="Previous testimonial" onClick={() => setTestimonial((testimonial + testimonials.length - 1) % testimonials.length)}><ChevronLeft /></Button>
-            <article className="testimonial-card"><Quote /><p>“{testimonials[testimonial].quote}”</p><div><span>{testimonials[testimonial].initials}</span><p><strong>{testimonials[testimonial].name}</strong><small>Parent</small></p></div></article>
+            <article className="testimonial-card"><Quote /><p>“{currentTestimonial.quote}”</p><div><span>{currentTestimonial.initials}</span><p><strong>{currentTestimonial.name}</strong><small>Parent</small></p></div></article>
             <Button variant="outline" size="icon" aria-label="Next testimonial" onClick={() => setTestimonial((testimonial + 1) % testimonials.length)}><ChevronRight /></Button>
           </div>
           <div className="testimonial-dots">{testimonials.map((item, index) => <Button variant="ghost" key={item.name} className={index === testimonial ? "active" : ""} aria-label={`Show testimonial ${index + 1}`} onClick={() => setTestimonial(index)} />)}</div>
