@@ -26,7 +26,7 @@ import {
   Utensils,
   X,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/ekatva-hero.jpg";
 import campusImage from "@/assets/ekatva-campus.jpg";
@@ -124,7 +124,7 @@ function SectionTitle({ eyebrow, title, copy, light = false }: { eyebrow: string
   );
 }
 
-function CtaLink({ children, inverse = false }: { children: React.ReactNode; inverse?: boolean }) {
+function CtaLink({ children, inverse = false }: { children: ReactNode; inverse?: boolean }) {
   return (
     <Button asChild size="lg" className={inverse ? "cta-button cta-inverse" : "cta-button"}>
       <a href="#admissions">{children}<ArrowRight /></a>
@@ -244,7 +244,7 @@ function HomePage() {
             {academics.map((item) => (
               <article className="academic-card" key={item.name}>
                 <img src={item.image} alt={`${item.name} students at Ekatva`} loading="lazy" className={item.position} width="600" height="520" />
-                <div><span>{item.grades}</span><h3>{item.name}</h3><button aria-label={`Learn about ${item.name}`}><ArrowRight /></button></div>
+                <div><span>{item.grades}</span><h3>{item.name}</h3><Button variant="ghost" size="icon" aria-label={`Learn about ${item.name}`}><ArrowRight /></Button></div>
               </article>
             ))}
           </div>
@@ -286,7 +286,7 @@ function HomePage() {
             <article className="testimonial-card"><Quote /><p>“{testimonials[testimonial].quote}”</p><div><span>{testimonials[testimonial].initials}</span><p><strong>{testimonials[testimonial].name}</strong><small>Parent</small></p></div></article>
             <Button variant="outline" size="icon" aria-label="Next testimonial" onClick={() => setTestimonial((testimonial + 1) % testimonials.length)}><ChevronRight /></Button>
           </div>
-          <div className="testimonial-dots">{testimonials.map((item, index) => <button key={item.name} className={index === testimonial ? "active" : ""} aria-label={`Show testimonial ${index + 1}`} onClick={() => setTestimonial(index)} />)}</div>
+          <div className="testimonial-dots">{testimonials.map((item, index) => <Button variant="ghost" key={item.name} className={index === testimonial ? "active" : ""} aria-label={`Show testimonial ${index + 1}`} onClick={() => setTestimonial(index)} />)}</div>
         </div>
       </section>
 
