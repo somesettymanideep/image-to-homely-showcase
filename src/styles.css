@@ -72,6 +72,16 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .reveal-section { opacity: 0; transform: translateY(2.25rem); transition: opacity .85s cubic-bezier(.22, 1, .36, 1), transform .85s cubic-bezier(.22, 1, .36, 1); transition-delay: .08s; }
 .reveal-section.reveal-delay-1 { transition-delay: .18s; }
 .reveal-section.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-list > * { opacity: 0; transform: translateY(1.4rem); transition: opacity .65s cubic-bezier(.22, 1, .36, 1), transform .65s cubic-bezier(.22, 1, .36, 1); }
+.reveal-section.is-visible.reveal-list > *, .reveal-section.is-visible .reveal-list > * { opacity: 1; transform: translateY(0); }
+.reveal-section.is-visible .reveal-list > :nth-child(1), .reveal-section.is-visible.reveal-list > :nth-child(1) { transition-delay: .12s; }
+.reveal-section.is-visible .reveal-list > :nth-child(2), .reveal-section.is-visible.reveal-list > :nth-child(2) { transition-delay: .22s; }
+.reveal-section.is-visible .reveal-list > :nth-child(3), .reveal-section.is-visible.reveal-list > :nth-child(3) { transition-delay: .32s; }
+.reveal-section.is-visible .reveal-list > :nth-child(4), .reveal-section.is-visible.reveal-list > :nth-child(4) { transition-delay: .42s; }
+.reveal-section.is-visible .reveal-list > :nth-child(5), .reveal-section.is-visible.reveal-list > :nth-child(5) { transition-delay: .52s; }
+.reveal-section.is-visible .reveal-list > :nth-child(6), .reveal-section.is-visible.reveal-list > :nth-child(6) { transition-delay: .62s; }
+.reveal-section.is-visible .reveal-list > :nth-child(7), .reveal-section.is-visible.reveal-list > :nth-child(7) { transition-delay: .72s; }
+.reveal-section.is-visible .reveal-list > :nth-child(8), .reveal-section.is-visible.reveal-list > :nth-child(8) { transition-delay: .82s; }
 
 .site-header { position: fixed; z-index: 50; inset: 0 0 auto; padding: .65rem clamp(1rem, 3vw, 3rem); transition: .35s ease; }
 .nav-shell { height: 4.75rem; max-width: 1440px; margin: auto; padding: 0 1.15rem 0 1rem; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 1.25rem; border: 1px solid transparent; border-radius: 1rem; transition: .35s ease; }
@@ -314,5 +324,5 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
-  .reveal-section { opacity: 1; transform: none; }
+  .reveal-section, .reveal-list > * { opacity: 1; transform: none; }
 }

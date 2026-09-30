@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep the homepage as a single-page, anchor-navigated school experience; this preserves its guided story from introduction to admissions.
+- Stagger direct children inside reveal groups after their section enters view; this keeps page motion sequential and easy to follow.
