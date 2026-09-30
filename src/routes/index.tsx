@@ -33,6 +33,7 @@ import campusImage from "@/assets/ekatva-campus.jpg";
 import classroomImage from "@/assets/ekatva-classroom.jpg";
 import cultureImage from "@/assets/ekatva-culture.jpg";
 import logoAsset from "@/assets/ekatva-logo.webp.asset.json";
+import heroAsset from "@/assets/ekatva-students-hero.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -144,6 +145,24 @@ function HomePage() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const sections = document.querySelectorAll<HTMLElement>("[data-reveal]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8%" },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
   const currentTestimonial = testimonials[testimonial];
   if (!currentTestimonial) return null;
 
@@ -170,8 +189,8 @@ function HomePage() {
         ) : null}
       </header>
 
-      <section id="home" className="hero-section">
-        <img src={heroImage} alt="Ekatva students walking through the school campus" className="hero-image" width="1920" height="1088" />
+      <section id="home" className="hero-section reveal-section" data-reveal>
+        <img src={heroAsset.url} alt="Ekatva students walking through the school campus" className="hero-image" width="1365" height="768" />
         <div className="hero-shade" />
         <div className="hero-content">
           <p className="hero-eyebrow"><span /> LEARN <i /> GROW <i /> ACHIEVE</p>
@@ -186,7 +205,7 @@ function HomePage() {
         <div className="hero-dots" aria-hidden="true"><span className="active" /><span /><span /></div>
       </section>
 
-      <section className="stats-wrap" aria-label="School achievements">
+      <section className="stats-wrap reveal-section reveal-delay-1" data-reveal aria-label="School achievements">
         <div className="stats-bar">
           {stats.map(({ value, label, icon: Icon }) => (
             <article className="stat" key={label}><Icon /><strong>{value}</strong><span>{label}</span></article>
@@ -194,7 +213,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section id="about" className="section-shell about-section">
+      <section id="about" className="section-shell about-section reveal-section" data-reveal>
         <div className="about-copy">
           <SectionTitle eyebrow="About Ekatva EM School" title="Building Bright Futures with the Right Values" />
           <p className="section-copy text-muted-foreground">Ekatva is a place where learning goes beyond books. Our student-centred approach nurtures curiosity, confidence and character through academic excellence, modern infrastructure and a dedicated faculty.</p>
@@ -207,7 +226,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="facilities-band">
+      <section className="facilities-band reveal-section reveal-delay-1" data-reveal>
         <div className="section-shell facilities-layout">
           <div>
             <SectionTitle eyebrow="Our Facilities" title="Modern Infrastructure for Holistic Growth" copy="Thoughtfully designed spaces create a safe, healthy and inspiring environment for every student." />
@@ -221,7 +240,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section-shell why-layout">
+      <section className="section-shell why-layout reveal-section" data-reveal>
         <div>
           <SectionTitle eyebrow="Why Choose Us" title="Why Choose Ekatva EM School?" />
           <ul className="benefits">{benefits.map((item) => <li key={item}><span><Check /></span>{item}</li>)}</ul>
@@ -237,7 +256,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section id="academics" className="academics-band">
+      <section id="academics" className="academics-band reveal-section reveal-delay-1" data-reveal>
         <div className="section-shell academics-layout">
           <div className="academics-intro">
             <SectionTitle light eyebrow="Our Academics" title="Learning for Every Stage" copy="From foundational years to higher grades, our programs build strong concepts and future-ready skills." />
@@ -254,7 +273,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section id="campus-life" className="section-shell gallery-section">
+      <section id="campus-life" className="section-shell gallery-section reveal-section" data-reveal>
         <div className="gallery-intro">
           <SectionTitle eyebrow="Campus Life" title="Moments That Inspire" copy="From cultural celebrations to sports events, every moment builds confidence, creativity and lasting memories." />
           <CtaLink>View Gallery</CtaLink>
@@ -267,7 +286,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section id="news" className="news-band">
+      <section id="news" className="news-band reveal-section reveal-delay-1" data-reveal>
         <div className="section-shell news-layout">
           <div><SectionTitle eyebrow="Latest News & Events" title="Stay Updated with Our School Activities" /><CtaLink>View All News</CtaLink></div>
           <div className="news-grid">
@@ -281,7 +300,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="testimonials-section">
+      <section className="testimonials-section reveal-section" data-reveal>
         <div className="section-shell">
           <div className="testimonial-heading"><SectionTitle eyebrow="Parent Stories" title="What Our Parents Say" copy="Trusted by families. Loved by students." /></div>
           <div className="testimonial-row">
@@ -293,7 +312,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section id="admissions" className="admissions-banner">
+      <section id="admissions" className="admissions-banner reveal-section reveal-delay-1" data-reveal>
         <img src={heroImage} alt="" loading="lazy" width="1920" height="1088" />
         <div className="admissions-overlay" />
         <div className="section-shell admissions-content">
@@ -302,7 +321,7 @@ function HomePage() {
         </div>
       </section>
 
-      <footer id="contact" className="site-footer">
+      <footer id="contact" className="site-footer reveal-section" data-reveal>
         <div className="section-shell footer-grid">
           <div className="footer-brand"><img src={logoAsset.url} alt="Ekatva EM School" width="160" height="65" /><p>The genesis of excellence.<br />Nurturing young minds.</p></div>
           <div><h3>Quick Links</h3><a href="#home">Home</a><a href="#about">About Us</a><a href="#academics">Academics</a><a href="#campus-life">Campus Life</a><a href="#admissions">Admissions</a></div>
