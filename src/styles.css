@@ -279,6 +279,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 @media (max-width: 760px) {
+  .marquee-item { padding: .4rem 1.1rem; font-size: .62rem; letter-spacing: .09em; }
   .site-header { padding: .5rem; }
   .nav-shell { height: 4rem; padding: 0 .6rem; gap: .4rem; }
   .brand-logo img { width: 7rem; }
