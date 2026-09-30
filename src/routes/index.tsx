@@ -192,7 +192,7 @@ function HomePage() {
       <section id="home" className="hero-section reveal-section" data-reveal>
         <img src={heroAsset.url} alt="Ekatva students walking through the school campus" className="hero-image" width="1365" height="768" />
         <div className="hero-shade" />
-        <div className="hero-content">
+        <div className="hero-content reveal-list">
           <p className="hero-eyebrow"><span /> LEARN <i /> GROW <i /> ACHIEVE</p>
           <h1>The Genesis of<br /><strong>Ekatva EM School</strong></h1>
           <p className="hero-copy">Nurturing young minds with values, knowledge and confidence for a brighter future.</p>
@@ -206,14 +206,14 @@ function HomePage() {
       </section>
 
       <section className="stats-wrap reveal-section reveal-delay-1" data-reveal aria-label="School achievements">
-        <div className="stats-bar">
+        <div className="stats-bar reveal-list">
           {stats.map(({ value, label, icon: Icon }) => (
             <article className="stat" key={label}><Icon /><strong>{value}</strong><span>{label}</span></article>
           ))}
         </div>
       </section>
 
-      <section id="about" className="section-shell about-section reveal-section" data-reveal>
+      <section id="about" className="section-shell about-section reveal-section reveal-list" data-reveal>
         <div className="about-copy">
           <SectionTitle eyebrow="About Ekatva EM School" title="Building Bright Futures with the Right Values" />
           <p className="section-copy text-muted-foreground">Ekatva is a place where learning goes beyond books. Our student-centred approach nurtures curiosity, confidence and character through academic excellence, modern infrastructure and a dedicated faculty.</p>
@@ -227,12 +227,12 @@ function HomePage() {
       </section>
 
       <section className="facilities-band reveal-section reveal-delay-1" data-reveal>
-        <div className="section-shell facilities-layout">
+        <div className="section-shell facilities-layout reveal-list">
           <div>
             <SectionTitle eyebrow="Our Facilities" title="Modern Infrastructure for Holistic Growth" copy="Thoughtfully designed spaces create a safe, healthy and inspiring environment for every student." />
             <CtaLink>Explore All Facilities</CtaLink>
           </div>
-          <div className="facility-grid">
+          <div className="facility-grid reveal-list">
             {facilities.map(({ title, detail, icon: Icon, tone }) => (
               <article className="facility-card" key={title}><span className={`icon-box icon-${tone}`}><Icon /></span><div><h3>{title}</h3><p>{detail}</p></div></article>
             ))}
@@ -240,15 +240,15 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section-shell why-layout reveal-section" data-reveal>
+      <section className="section-shell why-layout reveal-section reveal-list" data-reveal>
         <div>
           <SectionTitle eyebrow="Why Choose Us" title="Why Choose Ekatva EM School?" />
-          <ul className="benefits">{benefits.map((item) => <li key={item}><span><Check /></span>{item}</li>)}</ul>
+          <ul className="benefits reveal-list">{benefits.map((item) => <li key={item}><span><Check /></span>{item}</li>)}</ul>
           <p className="hand-note">More than just a school,<br />we are a family!</p>
         </div>
         <div className="why-visual">
           <img src={classroomImage} alt="Student enjoying a classroom lesson" loading="lazy" width="1408" height="1008" />
-          <div className="values-card">
+          <div className="values-card reveal-list">
             <p><BookOpen />Learn <span>with Joy</span></p>
             <p><Sparkles />Grow <span>with Values</span></p>
             <p><Users />Succeed <span>Together</span></p>
@@ -257,12 +257,12 @@ function HomePage() {
       </section>
 
       <section id="academics" className="academics-band reveal-section reveal-delay-1" data-reveal>
-        <div className="section-shell academics-layout">
+        <div className="section-shell academics-layout reveal-list">
           <div className="academics-intro">
             <SectionTitle light eyebrow="Our Academics" title="Learning for Every Stage" copy="From foundational years to higher grades, our programs build strong concepts and future-ready skills." />
             <CtaLink inverse>Explore Academics</CtaLink>
           </div>
-          <div className="academic-grid">
+          <div className="academic-grid reveal-list">
             {academics.map((item) => (
               <article className="academic-card" key={item.name}>
                 <img src={item.image} alt={`${item.name} students at Ekatva`} loading="lazy" className={item.position} width="600" height="520" />
@@ -274,11 +274,11 @@ function HomePage() {
       </section>
 
       <section id="campus-life" className="section-shell gallery-section reveal-section" data-reveal>
-        <div className="gallery-intro">
+        <div className="gallery-intro reveal-list">
           <SectionTitle eyebrow="Campus Life" title="Moments That Inspire" copy="From cultural celebrations to sports events, every moment builds confidence, creativity and lasting memories." />
           <CtaLink>View Gallery</CtaLink>
         </div>
-        <div id="gallery" className="masonry-gallery">
+        <div id="gallery" className="masonry-gallery reveal-list">
           <figure className="gallery-feature"><img src={cultureImage} alt="Students performing at the cultural festival" loading="lazy" width="1600" height="1200" /><figcaption>Cultural Celebrations <ArrowRight /></figcaption></figure>
           <figure><img src={campusImage} alt="Students enjoying campus life" loading="lazy" width="1408" height="1008" /><figcaption>Campus Life <ArrowRight /></figcaption></figure>
           <figure><img src={classroomImage} alt="Creative classroom learning" loading="lazy" width="1408" height="1008" /><figcaption>Classroom Joy <ArrowRight /></figcaption></figure>
@@ -287,9 +287,9 @@ function HomePage() {
       </section>
 
       <section id="news" className="news-band reveal-section reveal-delay-1" data-reveal>
-        <div className="section-shell news-layout">
+        <div className="section-shell news-layout reveal-list">
           <div><SectionTitle eyebrow="Latest News & Events" title="Stay Updated with Our School Activities" /><CtaLink>View All News</CtaLink></div>
-          <div className="news-grid">
+          <div className="news-grid reveal-list">
             {news.map((item) => (
               <article className="news-card" key={item.title}>
                 <div className="news-image"><img src={item.image} alt="" loading="lazy" width="500" height="320" /><span><strong>{item.day}</strong>{item.month}</span></div>
@@ -301,7 +301,7 @@ function HomePage() {
       </section>
 
       <section className="testimonials-section reveal-section" data-reveal>
-        <div className="section-shell">
+        <div className="section-shell reveal-list">
           <div className="testimonial-heading"><SectionTitle eyebrow="Parent Stories" title="What Our Parents Say" copy="Trusted by families. Loved by students." /></div>
           <div className="testimonial-row">
             <Button variant="outline" size="icon" aria-label="Previous testimonial" onClick={() => setTestimonial((testimonial + testimonials.length - 1) % testimonials.length)}><ChevronLeft /></Button>
@@ -315,20 +315,20 @@ function HomePage() {
       <section id="admissions" className="admissions-banner reveal-section reveal-delay-1" data-reveal>
         <img src={heroImage} alt="" loading="lazy" width="1920" height="1088" />
         <div className="admissions-overlay" />
-        <div className="section-shell admissions-content">
+        <div className="section-shell admissions-content reveal-list">
           <div><p className="eyebrow eyebrow-light"><span />Admissions Open · 2026–27</p><h2>Give Your Child the Best<br />Learning Experience</h2><p>Join Ekatva EM School and open the door to a brighter future.</p></div>
           <CtaLink inverse>Apply Now</CtaLink>
         </div>
       </section>
 
       <footer id="contact" className="site-footer reveal-section" data-reveal>
-        <div className="section-shell footer-grid">
+        <div className="section-shell footer-grid reveal-list">
           <div className="footer-brand"><img src={logoAsset.url} alt="Ekatva EM School" width="160" height="65" /><p>The genesis of excellence.<br />Nurturing young minds.</p></div>
           <div><h3>Quick Links</h3><a href="#home">Home</a><a href="#about">About Us</a><a href="#academics">Academics</a><a href="#campus-life">Campus Life</a><a href="#admissions">Admissions</a></div>
           <div><h3>Explore</h3><a href="#gallery">Gallery</a><a href="#news">News & Events</a><a href="#about">Facilities</a><a href="#contact">Careers</a><a href="#contact">Contact</a></div>
           <div><h3>Contact Us</h3><p><MapPin />Vijayawada, Andhra Pradesh</p><p><Phone />Admissions Office</p><p><Mail />Write to Ekatva</p></div>
         </div>
-        <div className="section-shell footer-bottom"><p>© 2026 Ekatva EM School. All Rights Reserved.</p><div><a href="#contact">Privacy Policy</a><a href="#contact">Terms & Conditions</a></div></div>
+        <div className="section-shell footer-bottom reveal-list"><p>© 2026 Ekatva EM School. All Rights Reserved.</p><div><a href="#contact">Privacy Policy</a><a href="#contact">Terms & Conditions</a></div></div>
         <div className="brand-stripe"><span /><span /><span /></div>
       </footer>
     </main>
