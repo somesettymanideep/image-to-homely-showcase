@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { NoticeBoardEnquiry } from "@/components/NoticeBoardEnquiry";
 import {
   ArrowRight,
   BookOpen,
@@ -60,6 +61,7 @@ const navItems = [
   ["Home", "#home"],
   ["About Us", "#about"],
   ["Academics", "#academics"],
+  ["Notice Board", "#notice-board"],
   ["Campus Life", "#campus-life"],
   ["Admissions", "#admissions"],
   ["Gallery", "#gallery"],
@@ -292,6 +294,9 @@ function HomePage() {
 
       <section id="campus-life" className="section-shell gallery-section reveal-section" data-reveal>
         <div className="gallery-intro reveal-list">
+      <NoticeBoardEnquiry />
+
+     
           <SectionTitle eyebrow="Campus Life" title="Moments That Inspire" copy="From cultural celebrations to sports events, every moment builds confidence, creativity and lasting memories." />
           <CtaLink>View Gallery</CtaLink>
         </div>
