@@ -109,6 +109,14 @@ const news = [
   { day: "10", month: "AUG", title: "Cultural Fest", category: "Celebrations", image: cultureImage },
 ];
 
+const announcements = [
+  "Admissions Open · 2026–27",
+  "Annual Sports Day · Aug 28",
+  "Teacher Training Program · Aug 15",
+  "Cultural Fest · Aug 10",
+  "Smart Classrooms & Safe Transport",
+];
+
 const testimonials = [
   { quote: "Ekatva provides the perfect balance of academics and values. We are truly grateful.", name: "Rajesh Kumar", initials: "RK" },
   { quote: "The teachers are supportive and caring. My child has grown in confidence and creativity.", name: "Priya Sharma", initials: "PS" },
@@ -168,6 +176,15 @@ function HomePage() {
 
   return (
     <main className="overflow-x-clip bg-background">
+      <div className="top-marquee">
+        <div className="marquee-track">
+          {[0, 1].map((copy) => (
+            <div className="marquee-group" key={copy} aria-hidden={copy === 1}>
+              {announcements.map((item) => <span className="marquee-item" key={item}><Sparkles />{item}</span>)}
+            </div>
+          ))}
+        </div>
+      </div>
       <header className={`site-header ${scrolled ? "site-header-scrolled" : ""}`}>
         <div className="nav-shell">
           <a href="#home" aria-label="Ekatva EM School home" className="brand-logo">
