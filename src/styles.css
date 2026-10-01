@@ -148,19 +148,32 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .image-note { position: absolute; z-index: 3; right: -2rem; bottom: -2rem; background: var(--card); border-radius: 1.1rem; padding: 1rem 1.4rem; box-shadow: 0 14px 35px color-mix(in oklab, var(--deep) 16%, transparent); font-family: cursive; font-size: 1.05rem; color: var(--primary); transform: rotate(-3deg); }
 .image-note svg { color: var(--brand-red); width: 1.5rem; margin-bottom: .25rem; }
 
-.facilities-band { background: var(--surface-blue); padding: 7rem 0; position: relative; overflow: hidden; }
-.facilities-band::after { content: ""; position: absolute; right: -5rem; bottom: -7rem; width: 18rem; height: 18rem; border: 2.5rem solid color-mix(in oklab, var(--brand-green) 10%, transparent); border-radius: 58% 42%; }
-.facilities-layout { position: relative; z-index: 2; display: grid; grid-template-columns: .72fr 1.28fr; gap: 5rem; align-items: center; }
-.facility-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; }
-.facility-card { min-height: 10rem; background: var(--card); border: 1px solid color-mix(in oklab, var(--border) 70%, transparent); border-radius: 1rem; padding: 1.15rem; transition: .3s ease; box-shadow: 0 8px 22px color-mix(in oklab, var(--deep) 5%, transparent); }
-.facility-card:hover { transform: translateY(-6px); box-shadow: 0 15px 32px color-mix(in oklab, var(--deep) 10%, transparent); }
-.icon-box { display: grid; place-items: center; width: 2.7rem; height: 2.7rem; border-radius: .75rem; margin-bottom: 1rem; }
+.facilities-band { background: var(--background); padding: 6.5rem 0; position: relative; overflow: hidden; }
+.facilities-band::after { content: ""; position: absolute; right: -4rem; top: -5rem; width: 11rem; height: 7rem; border-radius: 50%; border: 1.4rem solid color-mix(in oklab, var(--brand-blue) 18%, transparent); transform: rotate(-24deg); }
+.facilities-layout { position: relative; z-index: 2; width: min(1400px, calc(100% - 3rem)); display: grid; grid-template-columns: minmax(17rem, .72fr) minmax(0, 2.35fr); gap: clamp(2.5rem, 5vw, 5rem); align-items: center; }
+.facilities-intro .section-title { font-size: clamp(2.2rem, 3.2vw, 3.4rem); }
+.facilities-note { display: flex; align-items: center; gap: .65rem; margin: 2.2rem 0 0; color: var(--primary); font-family: cursive; font-size: 1.35rem; transform: rotate(-3deg); }
+.facilities-note span { border-bottom: 2px solid var(--brand-green); }
+.facilities-note span:last-child { border-color: var(--brand-red); }
+.facilities-note i { width: .28rem; height: .28rem; border-radius: 50%; background: var(--primary); }
+.facility-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .9rem; }
+.facility-card { min-height: 10.6rem; display: grid; grid-template-columns: minmax(0, 1fr) 44%; gap: .6rem; overflow: hidden; background: var(--card); border: 1px solid color-mix(in oklab, var(--border) 58%, transparent); border-radius: .65rem; padding: .8rem .7rem .8rem .85rem; transition: .3s ease; box-shadow: 0 10px 28px color-mix(in oklab, var(--deep) 6%, transparent); }
+.facility-card:hover { transform: translateY(-5px); box-shadow: 0 16px 34px color-mix(in oklab, var(--deep) 11%, transparent); }
+.facility-card-copy { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; }
+.facility-card > img { align-self: stretch; width: 100%; height: 100%; min-height: 9rem; object-fit: cover; border-radius: .55rem; }
+.icon-box { display: grid; place-items: center; width: 2.35rem; height: 2.35rem; flex: 0 0 auto; border-radius: 50%; margin-bottom: .65rem; color: var(--primary-foreground); }
 .icon-box svg { width: 1.35rem; }
-.icon-blue { color: var(--brand-blue); background: color-mix(in oklab, var(--brand-blue) 11%, var(--card)); }
-.icon-red { color: var(--brand-red); background: color-mix(in oklab, var(--brand-red) 10%, var(--card)); }
-.icon-green { color: var(--brand-green); background: color-mix(in oklab, var(--brand-green) 11%, var(--card)); }
-.facility-card h3 { margin: 0; font-family: var(--font-display); font-size: .88rem; line-height: 1.3; }
-.facility-card p { margin: .35rem 0 0; font-size: .67rem; color: var(--muted-foreground); }
+.icon-blue { background: var(--brand-blue); }
+.icon-red { background: var(--brand-red); }
+.icon-green { background: var(--brand-green); }
+.icon-violet { background: oklch(0.58 0.2 304); }
+.icon-cyan { background: oklch(0.68 0.13 211); }
+.icon-orange { background: oklch(0.7 0.18 54); }
+.icon-pink { background: oklch(0.62 0.22 353); }
+.icon-navy { background: var(--primary); }
+.facility-card h3 { margin: 0; color: var(--primary); font-family: var(--font-display); font-size: .78rem; line-height: 1.25; }
+.facility-card p { margin: .3rem 0 0; font-size: .56rem; line-height: 1.45; color: var(--muted-foreground); }
+.facility-arrow { width: .9rem; margin-top: auto; color: var(--brand-blue); }
 
 .why-layout { display: grid; grid-template-columns: .82fr 1.18fr; gap: 6rem; align-items: center; padding-block: 8rem; }
 .benefits { display: grid; gap: .65rem; padding: 0; margin: 1.8rem 0; list-style: none; }
@@ -223,22 +236,34 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .news-body a { display: inline-flex; align-items: center; gap: .35rem; color: var(--primary); text-decoration: none; font-size: .65rem; font-weight: 800; }
 .news-body a svg { width: .8rem; }
 
-.testimonials-section { padding: 7rem 0; }
-.testimonial-heading { text-align: center; }
-.testimonial-heading .eyebrow { justify-content: center; }
-.testimonial-heading .section-title, .testimonial-heading .section-copy { margin-inline: auto; }
-.testimonial-row { margin: 2.5rem auto 0; max-width: 800px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 1.2rem; }
-.testimonial-row > button { background: var(--card); }
-.testimonial-card { padding: 2rem 2.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 1.1rem; box-shadow: 0 15px 35px color-mix(in oklab, var(--deep) 7%, transparent); }
-.testimonial-card > svg { color: var(--brand-red); opacity: .4; }
-.testimonial-card > p { min-height: 3.4rem; line-height: 1.7; color: var(--muted-foreground); }
-.testimonial-card > div { display: flex; align-items: center; gap: .8rem; }
-.testimonial-card > div > span { display: grid; place-items: center; width: 2.7rem; height: 2.7rem; border-radius: 50%; background: var(--primary); color: var(--primary-foreground); font-size: .7rem; font-weight: 800; }
-.testimonial-card div p { display: flex; flex-direction: column; margin: 0; font-size: .8rem; }
-.testimonial-card small { color: var(--muted-foreground); }
-.testimonial-dots { display: flex; justify-content: center; gap: .4rem; margin-top: 1.5rem; }
-.testimonial-dots button { border: 0; width: .45rem; height: .45rem; padding: 0; border-radius: 2rem; background: var(--border); cursor: pointer; transition: width .2s; }
-.testimonial-dots .active { width: 1.7rem; background: var(--secondary); }
+.testimonials-story { padding: 2.25rem 0 4rem; overflow: hidden; background: var(--surface-blue); }
+.testimonials-story-shell { width: min(1440px, 100%); margin-inline: auto; display: grid; grid-template-columns: minmax(18rem, .72fr) minmax(18rem, .62fr) minmax(0, 1.48fr); align-items: center; }
+.testimonial-story-image { align-self: stretch; min-height: 31rem; clip-path: ellipse(82% 67% at 16% 50%); }
+.testimonial-story-image img { width: 100%; height: 100%; min-height: 31rem; object-fit: cover; object-position: 55% center; }
+.testimonial-story-intro { padding: 2rem 2rem 2rem 1rem; }
+.testimonial-story-intro .eyebrow { margin-bottom: 1rem; }
+.testimonial-story-intro .eyebrow i { width: 2rem; height: 2px; background: var(--brand-red); }
+.testimonial-story-intro h2 { margin: 0; color: var(--primary); font-family: var(--font-display); font-size: clamp(2rem, 3vw, 3.2rem); line-height: 1.08; }
+.testimonial-story-intro > p:last-child { margin: 1rem 0 0; color: var(--muted-foreground); font-size: .82rem; line-height: 1.7; }
+.testimonial-carousel { position: relative; min-width: 0; padding: 1.5rem 2rem 3.5rem 0; }
+.testimonial-viewport { overflow: hidden; }
+.testimonial-track { display: flex; margin-left: -.85rem; }
+.testimonial-slide { min-width: 0; flex: 0 0 33.333%; padding-left: .85rem; }
+.testimonial-story-card { height: 19rem; display: flex; flex-direction: column; align-items: center; padding: 1.2rem 1.05rem; text-align: center; background: var(--card); border: 1px solid color-mix(in oklab, var(--border) 68%, transparent); border-radius: .65rem; box-shadow: 0 12px 30px color-mix(in oklab, var(--deep) 6%, transparent); }
+.testimonial-avatar { width: 4rem; height: 4rem; flex: 0 0 auto; overflow: hidden; border: 3px solid var(--surface-blue); border-radius: 50%; }
+.testimonial-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.testimonial-story-card blockquote { flex: 1; display: grid; place-items: center; margin: .8rem 0; color: var(--muted-foreground); font-size: .67rem; line-height: 1.55; }
+.testimonial-author { display: flex; flex-direction: column; font-size: .64rem; }
+.testimonial-author strong { color: var(--primary); }
+.testimonial-author span { color: var(--muted-foreground); }
+.testimonial-stars { display: flex; gap: .12rem; margin-top: .65rem; color: oklch(0.84 0.18 88); }
+.testimonial-stars svg { width: .72rem; fill: currentColor; }
+.testimonial-prev, .testimonial-next { position: absolute; z-index: 2; top: 48%; width: 2.4rem; height: 2.4rem; color: var(--brand-blue); background: var(--card); }
+.testimonial-prev { left: -1.2rem; }
+.testimonial-next { right: .8rem; }
+.testimonial-pagination { position: absolute; inset: auto 0 1rem; display: flex; justify-content: center; gap: .4rem; }
+.testimonial-pagination button { width: .48rem; height: .48rem; padding: 0; border: 0; border-radius: 50%; background: color-mix(in oklab, var(--brand-blue) 18%, var(--card)); cursor: pointer; }
+.testimonial-pagination button.active { background: var(--brand-blue); }
 
 .admissions-banner { position: relative; min-height: 24rem; overflow: hidden; }
 .admissions-banner > img, .admissions-overlay { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
@@ -274,7 +299,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .stats-bar { grid-template-columns: repeat(3, 1fr); }
   .stat:nth-child(3)::after { display: none; }
   .facilities-layout, .academics-layout, .news-layout { grid-template-columns: 1fr; }
-  .facility-grid { grid-template-columns: repeat(4, 1fr); }
+  .facility-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-story-shell { grid-template-columns: .8fr 1.2fr; }
+  .testimonial-story-image { grid-row: 1 / 3; }
+  .testimonial-carousel { padding-left: 1rem; }
   .academic-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -307,8 +335,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .section-title { font-size: 2.35rem; }
   .facilities-band, .academics-band, .news-band { padding: 5.5rem 0; }
   .facilities-layout { gap: 2.5rem; }
-  .facility-grid { grid-template-columns: repeat(2, 1fr); gap: .65rem; }
-  .facility-card { min-height: 9rem; padding: .9rem; }
+  .facility-grid { grid-template-columns: 1fr; gap: .7rem; }
+  .facility-card { min-height: 10rem; padding: .75rem; }
   .why-visual { grid-template-columns: 1fr; }
   .why-visual > img { height: 22rem; }
   .values-card { grid-template-columns: repeat(3, 1fr); }
@@ -323,9 +351,16 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .news-layout { gap: 2.5rem; }
   .news-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
   .news-card { flex: 0 0 82%; scroll-snap-align: start; }
-  .testimonial-row { grid-template-columns: 1fr; }
-  .testimonial-row > button { display: none; }
-  .testimonial-card { padding: 1.5rem; }
+  .testimonials-story { padding-top: 0; }
+  .testimonials-story-shell { display: block; width: 100%; }
+  .testimonial-story-image { min-height: 22rem; clip-path: ellipse(88% 68% at 30% 42%); }
+  .testimonial-story-image img { min-height: 22rem; }
+  .testimonial-story-intro { padding: 1rem 1.4rem 1.6rem; }
+  .testimonial-carousel { padding: 0 1.4rem 3.5rem; }
+  .testimonial-slide { flex-basis: 86%; }
+  .testimonial-story-card { height: 18rem; }
+  .testimonial-prev { left: .25rem; }
+  .testimonial-next { right: .25rem; }
   .admissions-content { grid-template-columns: 1fr; align-content: center; gap: 1.2rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem 1.5rem; }
   .footer-brand { grid-column: 1 / -1; }
