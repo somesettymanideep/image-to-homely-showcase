@@ -1,5 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { NoticeBoardEnquiry } from "@/components/NoticeBoardEnquiry";
+import { EventsCelebrationsCarousel } from "@/components/EventsCelebrationsCarousel";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
+import { LeadershipSection } from "@/components/LeadershipSection";
+import { TeachersAchievementSection } from "@/components/TeachersAchievementSection";
 import {
   ArrowRight,
   BookOpen,
@@ -60,9 +64,12 @@ export const Route = createFileRoute("/")({
 const navItems = [
   ["Home", "#home"],
   ["About Us", "#about"],
+  ["Leadership", "#leadership"],
+  ["Teacher's Achievement", "#teacher-achievements"],
   ["Academics", "#academics"],
   ["Notice Board", "#notice-board"],
   ["Campus Life", "#campus-life"],
+  ["Events & Celebrations", "#events"],
   ["Admissions", "#admissions"],
   ["Gallery", "#gallery"],
   ["News & Events", "#news"],
@@ -146,7 +153,6 @@ function CtaLink({ children, inverse = false }: { children: ReactNode; inverse?:
 function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [testimonial, setTestimonial] = useState(0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -172,9 +178,6 @@ function HomePage() {
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
   }, []);
-
-  const currentTestimonial = testimonials[testimonial];
-  if (!currentTestimonial) return null;
 
   return (
     <main className="overflow-x-clip bg-background">
@@ -245,6 +248,10 @@ function HomePage() {
         </div>
       </section>
 
+      <LeadershipSection />
+
+      <TeachersAchievementSection />
+
       <section className="facilities-band reveal-section reveal-delay-1" data-reveal>
         <div className="section-shell facilities-layout reveal-list">
           <div>
@@ -292,11 +299,10 @@ function HomePage() {
         </div>
       </section>
 
-      <section id="campus-life" className="section-shell gallery-section reveal-section" data-reveal>
-        <div className="gallery-intro reveal-list">
       <NoticeBoardEnquiry />
 
-     
+      <section id="campus-life" className="section-shell gallery-section reveal-section" data-reveal>
+        <div className="gallery-intro reveal-list">
           <SectionTitle eyebrow="Campus Life" title="Moments That Inspire" copy="From cultural celebrations to sports events, every moment builds confidence, creativity and lasting memories." />
           <CtaLink>View Gallery</CtaLink>
         </div>
@@ -307,6 +313,8 @@ function HomePage() {
           <aside className="gallery-stats"><Camera /><strong>100+</strong><span>Events Each Year</span><hr /><strong>5000+</strong><span>Happy Moments</span></aside>
         </div>
       </section>
+
+      <EventsCelebrationsCarousel />
 
       <section id="news" className="news-band reveal-section reveal-delay-1" data-reveal>
         <div className="section-shell news-layout reveal-list">
@@ -322,17 +330,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="testimonials-section reveal-section" data-reveal>
-        <div className="section-shell reveal-list">
-          <div className="testimonial-heading"><SectionTitle eyebrow="Parent Stories" title="What Our Parents Say" copy="Trusted by families. Loved by students." /></div>
-          <div className="testimonial-row">
-            <Button variant="outline" size="icon" aria-label="Previous testimonial" onClick={() => setTestimonial((testimonial + testimonials.length - 1) % testimonials.length)}><ChevronLeft /></Button>
-            <article className="testimonial-card"><Quote /><p>“{currentTestimonial.quote}”</p><div><span>{currentTestimonial.initials}</span><p><strong>{currentTestimonial.name}</strong><small>Parent</small></p></div></article>
-            <Button variant="outline" size="icon" aria-label="Next testimonial" onClick={() => setTestimonial((testimonial + 1) % testimonials.length)}><ChevronRight /></Button>
-          </div>
-          <div className="testimonial-dots">{testimonials.map((item, index) => <Button variant="ghost" key={item.name} className={index === testimonial ? "active" : ""} aria-label={`Show testimonial ${index + 1}`} onClick={() => setTestimonial(index)} />)}</div>
-        </div>
-      </section>
+      <TestimonialsCarousel />
 
       <section id="admissions" className="admissions-banner reveal-section reveal-delay-1" data-reveal>
         <img src={heroImage} alt="" loading="lazy" width="1920" height="1088" />
