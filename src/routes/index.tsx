@@ -11,8 +11,6 @@ import {
   CalendarDays,
   Camera,
   Check,
-  ChevronLeft,
-  ChevronRight,
   FlaskConical,
   GraduationCap,
   HeartHandshake,
@@ -22,7 +20,6 @@ import {
   Menu,
   Microscope,
   Phone,
-  Quote,
   School,
   ShieldCheck,
   Sparkles,
@@ -86,14 +83,14 @@ const stats = [
 ];
 
 const facilities = [
-  { title: "Smart Classrooms", detail: "Interactive learning", icon: School, tone: "blue" },
-  { title: "Science & Computer Labs", detail: "Discover by doing", icon: Microscope, tone: "red" },
-  { title: "Library", detail: "A world of stories", icon: Library, tone: "green" },
-  { title: "Sports & Recreation", detail: "Move, play, thrive", icon: Trophy, tone: "blue" },
-  { title: "Safe & Secure Campus", detail: "Care at every step", icon: ShieldCheck, tone: "red" },
-  { title: "Transport Facility", detail: "Reliable daily routes", icon: Bus, tone: "green" },
-  { title: "Cafeteria", detail: "Fresh, balanced meals", icon: Utensils, tone: "blue" },
-  { title: "Co-curricular Activities", detail: "Every talent matters", icon: Sparkles, tone: "red" },
+  { title: "Smart Classrooms", detail: "Interactive learning with modern technology.", icon: School, tone: "blue", image: classroomImage, position: "object-[45%_center]" },
+  { title: "Science & Computer Labs", detail: "Hands-on learning for a brighter future.", icon: Microscope, tone: "green", image: classroomImage, position: "object-[80%_center]" },
+  { title: "Library", detail: "A world of knowledge at your fingertips.", icon: Library, tone: "red", image: cultureImage, position: "object-[30%_center]" },
+  { title: "Sports & Recreation", detail: "Building healthier, stronger students.", icon: Trophy, tone: "violet", image: campusImage, position: "object-[65%_center]" },
+  { title: "Safe & Secure Campus", detail: "A protected environment for worry-free learning.", icon: ShieldCheck, tone: "cyan", image: campusImage, position: "object-[22%_center]" },
+  { title: "Transport Facility", detail: "Safe and reliable school transportation.", icon: Bus, tone: "orange", image: campusImage, position: "object-[82%_center]" },
+  { title: "Cafeteria", detail: "Nutritious meals for healthy minds and bodies.", icon: Utensils, tone: "pink", image: cultureImage, position: "object-[62%_center]" },
+  { title: "Co-Curricular Activities", detail: "Explore talents, build skills, discover passions.", icon: Sparkles, tone: "navy", image: cultureImage, position: "object-[82%_center]" },
 ];
 
 const benefits = [
@@ -124,12 +121,6 @@ const announcements = [
   "Teacher Training Program · Aug 15",
   "Cultural Fest · Aug 10",
   "Smart Classrooms & Safe Transport",
-];
-
-const testimonials = [
-  { quote: "Ekatva provides the perfect balance of academics and values. We are truly grateful.", name: "Rajesh Kumar", initials: "RK" },
-  { quote: "The teachers are supportive and caring. My child has grown in confidence and creativity.", name: "Priya Sharma", initials: "PS" },
-  { quote: "The environment is safe and positive. Ekatva feels like a second home for our child.", name: "Suresh Reddy", initials: "SR" },
 ];
 
 function SectionTitle({ eyebrow, title, copy, light = false }: { eyebrow: string; title: string; copy?: string; light?: boolean }) {
@@ -252,15 +243,24 @@ function HomePage() {
 
       <TeachersAchievementSection />
 
-      <section className="facilities-band reveal-section reveal-delay-1" data-reveal>
+      <section id="facilities" className="facilities-band reveal-section reveal-delay-1" data-reveal>
         <div className="section-shell facilities-layout reveal-list">
-          <div>
-            <SectionTitle eyebrow="Our Facilities" title="Modern Infrastructure for Holistic Growth" copy="Thoughtfully designed spaces create a safe, healthy and inspiring environment for every student." />
+          <div className="facilities-intro">
+            <SectionTitle eyebrow="Our Facilities" title="World-Class Facilities for Holistic Growth" copy="We provide modern infrastructure and a safe, conducive environment to support every child's academic, physical, emotional and creative growth." />
             <CtaLink>Explore All Facilities</CtaLink>
+            <p className="facilities-note"><span>Learn</span><i /> <span>Play</span><i /> <span>Grow</span></p>
           </div>
           <div className="facility-grid reveal-list">
-            {facilities.map(({ title, detail, icon: Icon, tone }) => (
-              <article className="facility-card" key={title}><span className={`icon-box icon-${tone}`}><Icon /></span><div><h3>{title}</h3><p>{detail}</p></div></article>
+            {facilities.map(({ title, detail, icon: Icon, tone, image, position }) => (
+              <article className="facility-card" key={title}>
+                <div className="facility-card-copy">
+                  <span className={`icon-box icon-${tone}`}><Icon /></span>
+                  <h3>{title}</h3>
+                  <p>{detail}</p>
+                  <ArrowRight className="facility-arrow" aria-hidden="true" />
+                </div>
+                <img src={image} alt={`${title} at Ekatva EM School`} loading="lazy" width="360" height="300" className={position} />
+              </article>
             ))}
           </div>
         </div>
