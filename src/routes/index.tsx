@@ -184,7 +184,7 @@ function HomePage() {
       <header className={`site-header ${scrolled ? "site-header-scrolled" : ""}`}>
         <div className="nav-shell">
           <a href="#home" aria-label="Ekatva EM School home" className="brand-logo">
-            <img src={logoAsset.url} alt="Ekatva EM School" width="142" height="58" />
+            <img src={logoUrl} alt="Ekatva EM School" width="142" height="58" />
           </a>
           <nav className="desktop-nav" aria-label="Primary navigation">
             {navItems.map(([label, href]) => <a key={label} href={href}>{label}</a>)}
@@ -203,7 +203,7 @@ function HomePage() {
       </header>
 
       <section id="home" className="hero-section reveal-section" data-reveal>
-        <img src={heroAsset.url} alt="Ekatva students walking through the school campus" className="hero-image" width="1365" height="768" />
+        <img src={heroUrl} alt="Ekatva students walking through the school campus" className="hero-image" width="1365" height="768" />
         <div className="hero-shade" />
         <div className="hero-content reveal-list">
           <p className="hero-eyebrow"><span /> LEARN <i /> GROW <i /> ACHIEVE</p>
@@ -343,7 +343,7 @@ function HomePage() {
 
       <footer id="contact" className="site-footer reveal-section" data-reveal>
         <div className="section-shell footer-grid reveal-list">
-          <div className="footer-brand"><img src={logoAsset.url} alt="Ekatva EM School" width="160" height="65" /><p>The genesis of excellence.<br />Nurturing young minds.</p></div>
+          <div className="footer-brand"><img src={logoUrl} alt="Ekatva EM School" width="160" height="65" /><p>The genesis of excellence.<br />Nurturing young minds.</p></div>
           <div><h3>Quick Links</h3><a href="#home">Home</a><a href="#about">About Us</a><a href="#academics">Academics</a><a href="#campus-life">Campus Life</a><a href="#admissions">Admissions</a></div>
           <div><h3>Explore</h3><a href="#gallery">Gallery</a><a href="#news">News & Events</a><a href="#about">Facilities</a><a href="#contact">Careers</a><a href="#contact">Contact</a></div>
           <div><h3>Contact Us</h3><p><MapPin />Vijayawada, Andhra Pradesh</p><p><Phone />Admissions Office</p><p><Mail />Write to Ekatva</p></div>
