@@ -34,8 +34,8 @@ import heroImage from "@/assets/ekatva-hero.jpg";
 import campusImage from "@/assets/ekatva-campus.jpg";
 import classroomImage from "@/assets/ekatva-classroom.jpg";
 import cultureImage from "@/assets/ekatva-culture.jpg";
-import logoAsset from "@/assets/ekatva-logo.webp.asset.json";
-import heroAsset from "@/assets/ekatva-students-hero.png.asset.json";
+import logoUrl from "@/assets/ekatva-logo.webp";
+import heroUrl from "@/assets/ekatva-students-hero.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
