@@ -1,32 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { NoticeBoardEnquiry } from "@/components/NoticeBoardEnquiry";
-import { EventsCelebrationsCarousel } from "@/components/EventsCelebrationsCarousel";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { LeadershipSection } from "@/components/LeadershipSection";
 import { TeachersAchievementSection } from "@/components/TeachersAchievementSection";
 import { EkatvaAchieversSection } from "@/components/EkatvaAchieversSection";
+import { EkatvaStoryInspiresSection } from "@/components/EkatvaStoryInspiresSection";
+import { FacilitiesSection } from "@/components/FacilitiesSection";
 import {
   ArrowRight,
   BookOpen,
-  Bus,
   CalendarDays,
   Camera,
-  Check,
-  FlaskConical,
   GraduationCap,
   HeartHandshake,
-  Library,
   Mail,
   MapPin,
   Menu,
-  Microscope,
   Phone,
-  School,
   ShieldCheck,
   Sparkles,
   Trophy,
   Users,
-  Utensils,
   X,
 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
@@ -65,10 +59,8 @@ const navItems = [
   ["About Us", "#about"],
   ["Leadership", "#leadership"],
   ["Campus Life", "#campus-life"],
-  ["Events & Celebrations", "#events"],
   ["Admissions", "#admissions"],
   ["Gallery", "#gallery"],
-  ["News & Events", "#news"],
   ["Contact", "#contact"],
 ] as const;
 
@@ -79,39 +71,6 @@ const stats = [
   { value: "12", label: "Years of Excellence", icon: Trophy },
   { value: "10+", label: "Co-curricular Activities", icon: Sparkles },
   { value: "6.5+", label: "Years of Trust", icon: ShieldCheck },
-];
-
-const facilities = [
-  { title: "Smart Classrooms", detail: "Interactive learning with modern technology.", icon: School, tone: "blue", image: classroomImage, position: "object-[45%_center]" },
-  { title: "Science & Computer Labs", detail: "Hands-on learning for a brighter future.", icon: Microscope, tone: "green", image: classroomImage, position: "object-[80%_center]" },
-  { title: "Library", detail: "A world of knowledge at your fingertips.", icon: Library, tone: "red", image: cultureImage, position: "object-[30%_center]" },
-  { title: "Sports & Recreation", detail: "Building healthier, stronger students.", icon: Trophy, tone: "violet", image: campusImage, position: "object-[65%_center]" },
-  { title: "Safe & Secure Campus", detail: "A protected environment for worry-free learning.", icon: ShieldCheck, tone: "cyan", image: campusImage, position: "object-[22%_center]" },
-  { title: "Transport Facility", detail: "Safe and reliable school transportation.", icon: Bus, tone: "orange", image: campusImage, position: "object-[82%_center]" },
-  { title: "Cafeteria", detail: "Nutritious meals for healthy minds and bodies.", icon: Utensils, tone: "pink", image: cultureImage, position: "object-[62%_center]" },
-  { title: "Co-Curricular Activities", detail: "Explore talents, build skills, discover passions.", icon: Sparkles, tone: "navy", image: cultureImage, position: "object-[82%_center]" },
-];
-
-const benefits = [
-  "Experienced & Dedicated Faculty",
-  "Modern Learning Infrastructure",
-  "Focus on Academic Excellence",
-  "Holistic Development Programs",
-  "Safe and Supportive Environment",
-  "Strong Parent-School Partnership",
-];
-
-const academics = [
-  { name: "Pre Primary", grades: "Play Group – UKG", image: cultureImage, position: "object-[40%_35%]" },
-  { name: "Primary", grades: "Grades 1 – 5", image: classroomImage, position: "object-center" },
-  { name: "Middle School", grades: "Grades 6 – 8", image: heroImage, position: "object-[68%_center]" },
-  { name: "High School", grades: "Grades 9 – 10", image: campusImage, position: "object-[25%_center]" },
-];
-
-const news = [
-  { day: "28", month: "AUG", title: "Annual Sports Day 2026", category: "Campus Life", image: campusImage },
-  { day: "15", month: "AUG", title: "Teacher Training Program", category: "Learning", image: classroomImage },
-  { day: "10", month: "AUG", title: "Cultural Fest", category: "Celebrations", image: cultureImage },
 ];
 
 const announcements = [
@@ -142,7 +101,6 @@ function CtaLink({ children, inverse = false }: { children: ReactNode; inverse?:
 
 const heroImages = [
   { src: heroUrl, alt: "Ekatva students walking through the school campus" },
-  { src: aboutCampusImage, alt: "Ekatva EM School campus aerial view" },
   { src: campusImage, alt: "Modern Ekatva school campus" },
   { src: classroomImage, alt: "Interactive classroom learning at Ekatva" },
 ];
@@ -268,7 +226,16 @@ function HomePage() {
 
       <section id="about" className="section-shell about-section reveal-section reveal-list" data-reveal>
         <div className="about-copy">
-          <SectionTitle eyebrow="About Ekatva EM School" title="Building Bright Futures with the Right Values" />
+          <div className="inline-flex items-center gap-2 mb-2">
+            <span className="w-6 h-0.5 bg-[#16a34a] rounded-full" />
+            <span className="text-xs sm:text-sm font-extrabold tracking-widest uppercase text-slate-700">
+              ABOUT EKATVA EM SCHOOL
+            </span>
+            <span className="w-6 h-0.5 bg-[#e11d48] rounded-full" />
+          </div>
+          <h2 className="text-[clamp(1.75rem,2.8vw,2.75rem)] font-black text-[#003494] tracking-tight leading-tight mb-3">
+            Building Bright Futures with the Right Values
+          </h2>
           <p className="section-copy text-muted-foreground">Ekatva is a place where learning goes beyond books. Our student-centred approach nurtures curiosity, confidence and character through academic excellence, modern infrastructure and a dedicated faculty.</p>
           <CtaLink>Know More About Us</CtaLink>
         </div>
@@ -279,63 +246,11 @@ function HomePage() {
         </div>
       </section>
 
+      <EkatvaStoryInspiresSection />
+
       <NoticeBoardEnquiry />
 
-      <section id="facilities" className="facilities-band reveal-section reveal-delay-1" data-reveal>
-        <div className="section-shell facilities-layout reveal-list">
-          <div className="facilities-intro">
-            <SectionTitle eyebrow="Our Facilities" title="World-Class Facilities for Holistic Growth" copy="We provide modern infrastructure and a safe, conducive environment to support every child's academic, physical, emotional and creative growth." />
-            <CtaLink>Explore All Facilities</CtaLink>
-            <p className="facilities-note"><span>Learn</span><i /> <span>Play</span><i /> <span>Grow</span></p>
-          </div>
-          <div className="facility-grid reveal-list">
-            {facilities.map(({ title, detail, icon: Icon, tone, image, position }) => (
-              <article className="facility-card" key={title}>
-                <div className="facility-card-copy">
-                  <span className={`icon-box icon-${tone}`}><Icon /></span>
-                  <h3>{title}</h3>
-                  <p>{detail}</p>
-                  <ArrowRight className="facility-arrow" aria-hidden="true" />
-                </div>
-                <img src={image} alt={`${title} at Ekatva EM School`} loading="lazy" width="360" height="300" className={position} />
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-shell why-layout reveal-section reveal-list" data-reveal>
-        <div>
-          <SectionTitle eyebrow="Why Choose Us" title="Why Choose Ekatva EM School?" />
-          <ul className="benefits reveal-list">{benefits.map((item) => <li key={item}><span><Check /></span>{item}</li>)}</ul>
-          <p className="hand-note">More than just a school,<br />we are a family!</p>
-        </div>
-        <div className="why-visual">
-          <img src={classroomImage} alt="Student enjoying a classroom lesson" loading="lazy" width="1408" height="1008" />
-          <div className="values-card reveal-list">
-            <p><BookOpen />Learn <span>with Joy</span></p>
-            <p><Sparkles />Grow <span>with Values</span></p>
-            <p><Users />Succeed <span>Together</span></p>
-          </div>
-        </div>
-      </section>
-
-      <section id="academics" className="academics-band reveal-section reveal-delay-1" data-reveal>
-        <div className="section-shell academics-layout reveal-list">
-          <div className="academics-intro">
-            <SectionTitle light eyebrow="Our Academics" title="Learning for Every Stage" copy="From foundational years to higher grades, our programs build strong concepts and future-ready skills." />
-            <CtaLink inverse>Explore Academics</CtaLink>
-          </div>
-          <div className="academic-grid reveal-list">
-            {academics.map((item) => (
-              <article className="academic-card" key={item.name}>
-                <img src={item.image} alt={`${item.name} students at Ekatva`} loading="lazy" className={item.position} width="600" height="520" />
-                <div><span>{item.grades}</span><h3>{item.name}</h3><Button variant="ghost" size="icon" aria-label={`Learn about ${item.name}`}><ArrowRight /></Button></div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FacilitiesSection />
 
       <section id="campus-life" className="section-shell gallery-section reveal-section" data-reveal>
         <div className="gallery-intro reveal-list">
@@ -350,27 +265,11 @@ function HomePage() {
         </div>
       </section>
 
-      <EventsCelebrationsCarousel />
-
       <EkatvaAchieversSection />
 
       <TeachersAchievementSection />
 
       <LeadershipSection />
-
-      <section id="news" className="news-band reveal-section reveal-delay-1" data-reveal>
-        <div className="section-shell news-layout reveal-list">
-          <div><SectionTitle eyebrow="Latest News & Events" title="Stay Updated with Our School Activities" /><CtaLink>View All News</CtaLink></div>
-          <div className="news-grid reveal-list">
-            {news.map((item) => (
-              <article className="news-card" key={item.title}>
-                <div className="news-image"><img src={item.image} alt="" loading="lazy" width="500" height="320" /><span><strong>{item.day}</strong>{item.month}</span></div>
-                <div className="news-body"><p>{item.category}</p><h3>{item.title}</h3><a href="#contact">Read story <ArrowRight /></a></div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <TestimonialsCarousel />
 
@@ -387,7 +286,7 @@ function HomePage() {
         <div className="section-shell footer-grid reveal-list">
           <div className="footer-brand"><img src={logoUrl} alt="Ekatva EM School" width="160" height="65" /><p>The genesis of excellence.<br />Nurturing young minds.</p></div>
           <div><h3>Quick Links</h3><a href="#home">Home</a><a href="#about">About Us</a><a href="#academics">Academics</a><a href="#campus-life">Campus Life</a><a href="#admissions">Admissions</a></div>
-          <div><h3>Explore</h3><a href="#gallery">Gallery</a><a href="#news">News & Events</a><a href="#about">Facilities</a><a href="#contact">Careers</a><a href="#contact">Contact</a></div>
+          <div><h3>Explore</h3><a href="#gallery">Gallery</a><a href="#facilities">Facilities</a><a href="#contact">Careers</a><a href="#contact">Contact</a></div>
           <div><h3>Contact Us</h3><p><MapPin />Kanchikacharla, NTR Dist, Andhra Pradesh, 521180</p><p><Phone /><a href="tel:+919908818550">+91 9908818550</a></p><p><Mail /><a href="mailto:info@ekatvaedu.in">info@ekatvaedu.in</a></p></div>
         </div>
         <div className="section-shell footer-bottom reveal-list"><p>© 2026 Ekatva EM School. All Rights Reserved.</p><div><a href="#contact">Privacy Policy</a><a href="#contact">Terms & Conditions</a></div></div>

@@ -45,11 +45,11 @@ export function NoticeBoardEnquiry() {
   };
 
   return (
-    <section id="notice-board" className="py-12 sm:py-16 md:py-20 bg-slate-50/60 scroll-mt-20 reveal-section" data-reveal>
+    <section id="notice-board" className="py-0 sm:py-2 bg-slate-50/60 scroll-mt-20 reveal-section" data-reveal>
       <div className="section-shell">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch reveal-list">
           {/* ================= LEFT SIDE: NOTICE BOARD ================= */}
-          <div className="lg:col-span-5 bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 md:p-8 border border-slate-200/90 shadow-lg shadow-slate-200/50 flex flex-col justify-between transition-all">
+          <div className="lg:col-span-5 bg-white rounded-2xl sm:rounded-3xl px-5 sm:px-7 md:px-8 py-2 sm:py-3 md:py-4 border border-slate-200/90 shadow-lg shadow-slate-200/50 flex flex-col justify-between transition-all">
             <div>
               {/* Header */}
               <div className="flex items-center justify-between gap-3 mb-5 sm:mb-6">
@@ -132,7 +132,7 @@ export function NoticeBoardEnquiry() {
           </div>
 
           {/* ================= RIGHT SIDE: ADMISSION ENQUIRY ================= */}
-          <div className="lg:col-span-7 bg-gradient-to-br from-[#0047bb] via-[#0042b3] to-[#003494] rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 text-white relative overflow-hidden shadow-2xl shadow-blue-950/25 flex flex-col justify-between">
+          <div className="lg:col-span-7 bg-gradient-to-br from-[#0047bb] via-[#0042b3] to-[#003494] rounded-2xl sm:rounded-3xl px-5 sm:px-8 md:px-10 py-2 sm:py-3 md:py-4 text-white relative overflow-hidden shadow-2xl shadow-blue-950/25 flex flex-col justify-between">
             {/* Ambient Lighting FX */}
             <div className="absolute -right-16 -top-16 w-72 h-72 rounded-full bg-blue-400/20 blur-3xl pointer-events-none" />
             <div className="absolute -left-16 -bottom-16 w-72 h-72 rounded-full bg-emerald-400/15 blur-3xl pointer-events-none" />
@@ -141,8 +141,8 @@ export function NoticeBoardEnquiry() {
               {/* Form & Text Column */}
               <div className="md:col-span-7 lg:col-span-7 flex flex-col justify-center">
                 <div className="mb-4 sm:mb-6">
-                  <div className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[#4ade80] font-extrabold text-[11px] sm:text-xs tracking-wide uppercase mb-2 border border-white/15">
-                    <Sparkles className="w-3.5 h-3.5 fill-[#4ade80] text-[#4ade80]" />
+                  <div className="inline-flex items-center gap-1.5 bg-white px-3.5 py-1 rounded-full text-[#16a34a] font-black text-[11px] sm:text-xs tracking-wide uppercase mb-2 shadow-sm border border-white">
+                    <Sparkles className="w-3.5 h-3.5 fill-[#16a34a] text-[#16a34a]" />
                     <span>Admissions Open 2026-27</span>
                   </div>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-tight">

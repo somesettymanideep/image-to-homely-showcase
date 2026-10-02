@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, GraduationCap, User } from "lucide-react";
+import { BookOpen, GraduationCap, User } from "lucide-react";
 import leaderRameshbabu from "@/assets/leader-rameshbabu.jpg";
 import leaderManoj from "@/assets/leader-manoj.jpg";
 import leaderSindhura from "@/assets/leader-sindhura.jpg";
@@ -55,7 +55,7 @@ export function LeadershipSection() {
   return (
     <section
       id="leadership"
-      className="py-14 sm:py-20 md:py-24 px-6 sm:px-10 md:px-16 lg:px-24 bg-gradient-to-b from-slate-50 via-blue-50/20 to-slate-50 relative overflow-hidden reveal-section scroll-mt-20"
+      className="py-14 sm:py-20 md:py-24 px-6 sm:px-10 md:px-16 lg:px-24 bg-[#D4EEFD] relative overflow-hidden reveal-section scroll-mt-20"
       data-reveal
     >
       {/* Wave Accent at Bottom Left */}
@@ -168,15 +168,9 @@ export function LeadershipSection() {
                             <span className="w-4 h-1 bg-[#0047bb] rounded-full" />
                           </div>
 
-                          <p className="text-slate-600 text-xs sm:text-sm font-medium leading-relaxed mt-2 line-clamp-4">
+                          <p className="text-slate-600 text-xs sm:text-sm font-medium leading-relaxed mt-2">
                             {leader.description}
                           </p>
-                        </div>
-
-                        {/* Know More Link */}
-                        <div className="pt-4 mt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs sm:text-sm font-extrabold text-[#0047bb] group-hover:gap-2.5 transition-all">
-                          <span>Know More</span>
-                          <ArrowRight className="w-4 h-4" />
                         </div>
                       </div>
                     </div>

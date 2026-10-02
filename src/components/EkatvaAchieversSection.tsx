@@ -140,7 +140,7 @@ export function EkatvaAchieversSection() {
   return (
     <section
       id="achievers"
-      className="py-14 sm:py-20 md:py-24 px-4 sm:px-8 md:px-12 lg:px-16 bg-[#f8fafc] relative overflow-hidden reveal-section scroll-mt-20"
+      className="py-14 sm:py-20 md:py-24 px-4 sm:px-8 md:px-12 lg:px-16 bg-[#f4f9fe] relative overflow-hidden reveal-section scroll-mt-20"
       data-reveal
     >
       {/* Decorative Top-Left Blob & Dots */}

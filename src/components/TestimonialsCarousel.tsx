@@ -102,17 +102,30 @@ export function TestimonialsCarousel() {
   return (
     <section
       id="testimonials"
-      className="testimonials-story reveal-section scroll-mt-20"
+      className="testimonials-story reveal-section scroll-mt-20 bg-[#f5f9fd]"
+      style={{ backgroundColor: "#f5f9fd" }}
       data-reveal
     >
       <div className="testimonials-story-shell reveal-list">
-        <div className="testimonial-story-image">
-          <img src={storyImage} alt="An Ekatva parent with her daughter on campus" loading="lazy" width="1200" height="912" />
-        </div>
-        <div className="testimonial-story-intro">
-          <p className="eyebrow"><span />What Our Parents Say<i /></p>
-          <h2>Trusted by Families.<br />Loved by Students.</h2>
-          <p>Hear from our parents about their experiences, our values and the positive impact Ekatva EM School has made in their children’s lives.</p>
+        <div className="testimonial-story-left">
+          <div className="testimonial-story-image">
+            <img src={storyImage} alt="An Ekatva parent with her daughter on campus" loading="lazy" width="1200" height="912" />
+          </div>
+          <div className="testimonial-story-intro">
+            <div className="inline-flex items-center gap-2 mb-2">
+              <span className="w-6 h-0.5 bg-[#16a34a] rounded-full" />
+              <span className="text-xs sm:text-sm font-extrabold tracking-widest uppercase text-slate-700">
+                WHAT OUR PARENTS SAY
+              </span>
+              <span className="w-6 h-0.5 bg-[#e11d48] rounded-full" />
+            </div>
+            <h2 className="text-[clamp(1.75rem,2.8vw,2.75rem)] font-black text-[#003494] tracking-tight leading-none mb-3">
+              Trusted by Families.<br />Loved by Students.
+            </h2>
+            <p className="text-slate-600 font-medium text-xs sm:text-sm md:text-base leading-relaxed mt-2">
+              Hear from our parents about their experiences, our values and the positive impact Ekatva EM School has made in their children’s lives.
+            </p>
+          </div>
         </div>
         <div
           className="testimonial-carousel"
