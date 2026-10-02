@@ -102,7 +102,7 @@ export function TeachersAchievementSection() {
   return (
     <section
       id="teacher-achievements"
-      className="py-14 sm:py-20 md:py-24 bg-slate-50/80 relative overflow-hidden reveal-section scroll-mt-20"
+      className="py-14 sm:py-20 md:py-24 bg-[#f5f9fd] relative overflow-hidden reveal-section scroll-mt-20"
       data-reveal
     >
       {/* Top Left Organic Leaf Petals Decoration */}

@@ -4,6 +4,7 @@ import { EventsCelebrationsCarousel } from "@/components/EventsCelebrationsCarou
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { LeadershipSection } from "@/components/LeadershipSection";
 import { TeachersAchievementSection } from "@/components/TeachersAchievementSection";
+import { EkatvaAchieversSection } from "@/components/EkatvaAchieversSection";
 import {
   ArrowRight,
   BookOpen,
@@ -28,10 +29,11 @@ import {
   Utensils,
   X,
 } from "lucide-react";
-import { useEffect, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/ekatva-hero.jpg";
 import campusImage from "@/assets/ekatva-campus.jpg";
+import aboutCampusImage from "@/assets/ekatva-about-campus.jpg";
 import classroomImage from "@/assets/ekatva-classroom.jpg";
 import cultureImage from "@/assets/ekatva-culture.jpg";
 import logoUrl from "@/assets/ekatva-logo.webp";
@@ -62,9 +64,6 @@ const navItems = [
   ["Home", "#home"],
   ["About Us", "#about"],
   ["Leadership", "#leadership"],
-  ["Teacher's Achievement", "#teacher-achievements"],
-  ["Academics", "#academics"],
-  ["Notice Board", "#notice-board"],
   ["Campus Life", "#campus-life"],
   ["Events & Celebrations", "#events"],
   ["Admissions", "#admissions"],
@@ -141,9 +140,29 @@ function CtaLink({ children, inverse = false }: { children: ReactNode; inverse?:
   );
 }
 
+const heroImages = [
+  { src: heroUrl, alt: "Ekatva students walking through the school campus" },
+  { src: aboutCampusImage, alt: "Ekatva EM School campus aerial view" },
+  { src: campusImage, alt: "Modern Ekatva school campus" },
+  { src: classroomImage, alt: "Interactive classroom learning at Ekatva" },
+];
+
 function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [heroSlide, setHeroSlide] = useState(0);
+  const heroTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const advanceHeroSlide = useCallback(() => {
+    setHeroSlide((prev) => (prev + 1) % heroImages.length);
+  }, []);
+
+  useEffect(() => {
+    heroTimerRef.current = setInterval(advanceHeroSlide, 5000);
+    return () => {
+      if (heroTimerRef.current) clearInterval(heroTimerRef.current);
+    };
+  }, [advanceHeroSlide]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -203,7 +222,16 @@ function HomePage() {
       </header>
 
       <section id="home" className="hero-section reveal-section" data-reveal>
-        <img src={heroUrl} alt="Ekatva students walking through the school campus" className="hero-image" width="1365" height="768" />
+        {heroImages.map((img, i) => (
+          <img
+            key={img.alt}
+            src={img.src}
+            alt={img.alt}
+            className={`hero-image hero-slide ${i === heroSlide ? "hero-slide-active" : ""}`}
+            width="1365"
+            height="768"
+          />
+        ))}
         <div className="hero-shade" />
         <div className="hero-content reveal-list">
           <p className="hero-eyebrow"><span /> LEARN <i /> GROW <i /> ACHIEVE</p>
@@ -215,7 +243,19 @@ function HomePage() {
           </div>
         </div>
         <p className="hero-note">Small steps<br />create big dreams!<span /></p>
-        <div className="hero-dots" aria-hidden="true"><span className="active" /><span /><span /></div>
+        <div className="hero-dots" aria-hidden="true">
+          {heroImages.map((_, i) => (
+            <span
+              key={i}
+              className={i === heroSlide ? "active" : ""}
+              onClick={() => {
+                setHeroSlide(i);
+                if (heroTimerRef.current) clearInterval(heroTimerRef.current);
+                heroTimerRef.current = setInterval(advanceHeroSlide, 5000);
+              }}
+            />
+          ))}
+        </div>
       </section>
 
       <section className="stats-wrap reveal-section reveal-delay-1" data-reveal aria-label="School achievements">
@@ -234,14 +274,12 @@ function HomePage() {
         </div>
         <div className="editorial-image">
           <div className="organic-shape" />
-          <img src={campusImage} alt="Modern Ekatva school campus" loading="lazy" width="1408" height="1008" />
+          <img src={aboutCampusImage} alt="Modern Ekatva EM School campus view with sports ground and swimming pool" loading="lazy" width="1408" height="1008" />
           <div className="image-note"><HeartHandshake />A home for<br />lifelong learners</div>
         </div>
       </section>
 
-      <LeadershipSection />
-
-      <TeachersAchievementSection />
+      <NoticeBoardEnquiry />
 
       <section id="facilities" className="facilities-band reveal-section reveal-delay-1" data-reveal>
         <div className="section-shell facilities-layout reveal-list">
@@ -299,8 +337,6 @@ function HomePage() {
         </div>
       </section>
 
-      <NoticeBoardEnquiry />
-
       <section id="campus-life" className="section-shell gallery-section reveal-section" data-reveal>
         <div className="gallery-intro reveal-list">
           <SectionTitle eyebrow="Campus Life" title="Moments That Inspire" copy="From cultural celebrations to sports events, every moment builds confidence, creativity and lasting memories." />
@@ -315,6 +351,12 @@ function HomePage() {
       </section>
 
       <EventsCelebrationsCarousel />
+
+      <EkatvaAchieversSection />
+
+      <TeachersAchievementSection />
+
+      <LeadershipSection />
 
       <section id="news" className="news-band reveal-section reveal-delay-1" data-reveal>
         <div className="section-shell news-layout reveal-list">
@@ -346,7 +388,7 @@ function HomePage() {
           <div className="footer-brand"><img src={logoUrl} alt="Ekatva EM School" width="160" height="65" /><p>The genesis of excellence.<br />Nurturing young minds.</p></div>
           <div><h3>Quick Links</h3><a href="#home">Home</a><a href="#about">About Us</a><a href="#academics">Academics</a><a href="#campus-life">Campus Life</a><a href="#admissions">Admissions</a></div>
           <div><h3>Explore</h3><a href="#gallery">Gallery</a><a href="#news">News & Events</a><a href="#about">Facilities</a><a href="#contact">Careers</a><a href="#contact">Contact</a></div>
-          <div><h3>Contact Us</h3><p><MapPin />Vijayawada, Andhra Pradesh</p><p><Phone />Admissions Office</p><p><Mail />Write to Ekatva</p></div>
+          <div><h3>Contact Us</h3><p><MapPin />Kanchikacharla, NTR Dist, Andhra Pradesh, 521180</p><p><Phone /><a href="tel:+919908818550">+91 9908818550</a></p><p><Mail /><a href="mailto:info@ekatvaedu.in">info@ekatvaedu.in</a></p></div>
         </div>
         <div className="section-shell footer-bottom reveal-list"><p>© 2026 Ekatva EM School. All Rights Reserved.</p><div><a href="#contact">Privacy Policy</a><a href="#contact">Terms & Conditions</a></div></div>
         <div className="brand-stripe"><span /><span /><span /></div>
