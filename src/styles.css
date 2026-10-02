@@ -246,21 +246,21 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .testimonial-story-intro { padding: 2rem 2rem 2rem 1rem; }
 .testimonial-story-intro .eyebrow { margin-bottom: 1rem; }
 .testimonial-story-intro .eyebrow i { width: 2rem; height: 2px; background: var(--brand-red); }
-.testimonial-story-intro h2 { margin: 0; color: var(--primary); font-family: var(--font-display); font-size: clamp(2rem, 3vw, 3.2rem); line-height: 1.08; }
-.testimonial-story-intro > p:last-child { margin: 1rem 0 0; color: var(--muted-foreground); font-size: .82rem; line-height: 1.7; }
+.testimonial-story-intro h2 { margin: 0; color: var(--primary); font-family: var(--font-display); font-size: clamp(1.4rem, 2.2vw, 2.2rem); line-height: 1.15; }
+.testimonial-story-intro > p:last-child { margin: 1rem 0 0; color: var(--muted-foreground); font-size: 0.9rem; line-height: 1.65; }
 .testimonial-carousel { position: relative; min-width: 0; padding: 1.5rem 2rem 3.5rem 0; }
 .testimonial-viewport { overflow: hidden; }
 .testimonial-track { display: flex; margin-left: -.85rem; }
-.testimonial-slide { min-width: 0; flex: 0 0 33.333%; padding-left: .85rem; }
-.testimonial-story-card { height: 19rem; display: flex; flex-direction: column; align-items: center; padding: 1.2rem 1.05rem; text-align: center; background: var(--card); border: 1px solid color-mix(in oklab, var(--border) 68%, transparent); border-radius: .65rem; box-shadow: 0 12px 30px color-mix(in oklab, var(--deep) 6%, transparent); }
-.testimonial-avatar { width: 4rem; height: 4rem; flex: 0 0 auto; overflow: hidden; border: 3px solid var(--surface-blue); border-radius: 50%; }
+.testimonial-slide { min-width: 0; flex: 0 0 50%; padding-left: .85rem; }
+.testimonial-story-card { height: auto; min-height: 19.5rem; display: flex; flex-direction: column; align-items: center; padding: 1.4rem 1.15rem; text-align: center; background: var(--card); border: 1px solid color-mix(in oklab, var(--border) 68%, transparent); border-radius: .85rem; box-shadow: 0 12px 30px color-mix(in oklab, var(--deep) 6%, transparent); }
+.testimonial-avatar { width: 4.2rem; height: 4.2rem; flex: 0 0 auto; overflow: hidden; border: 3px solid var(--surface-blue); border-radius: 50%; }
 .testimonial-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.testimonial-story-card blockquote { flex: 1; display: grid; place-items: center; margin: .8rem 0; color: var(--muted-foreground); font-size: .67rem; line-height: 1.55; }
-.testimonial-author { display: flex; flex-direction: column; font-size: .64rem; }
-.testimonial-author strong { color: var(--primary); }
-.testimonial-author span { color: var(--muted-foreground); }
-.testimonial-stars { display: flex; gap: .12rem; margin-top: .65rem; color: oklch(0.84 0.18 88); }
-.testimonial-stars svg { width: .72rem; fill: currentColor; }
+.testimonial-story-card blockquote { flex: 1; display: grid; place-items: center; margin: 1rem 0; color: var(--foreground); font-size: 0.88rem; line-height: 1.6; font-weight: 500; }
+.testimonial-author { display: flex; flex-direction: column; font-size: 0.85rem; }
+.testimonial-author strong { color: var(--primary); font-size: 0.95rem; font-weight: 800; }
+.testimonial-author span { color: var(--muted-foreground); font-size: 0.8rem; font-weight: 600; }
+.testimonial-stars { display: flex; gap: .2rem; margin-top: .75rem; color: oklch(0.84 0.18 88); }
+.testimonial-stars svg { width: 0.95rem; height: 0.95rem; fill: currentColor; }
 .testimonial-prev, .testimonial-next { position: absolute; z-index: 2; top: 48%; width: 2.4rem; height: 2.4rem; color: var(--brand-blue); background: var(--card); }
 .testimonial-prev { left: -1.2rem; }
 .testimonial-next { right: .8rem; }
@@ -268,22 +268,22 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .testimonial-pagination button { width: .48rem; height: .48rem; padding: 0; border: 0; border-radius: 50%; background: color-mix(in oklab, var(--brand-blue) 18%, var(--card)); cursor: pointer; }
 .testimonial-pagination button.active { background: var(--brand-blue); }
 
-.admissions-banner { position: relative; min-height: 24rem; overflow: hidden; }
+.admissions-banner { position: relative; min-height: 15rem; overflow: hidden; }
 .admissions-banner > img, .admissions-overlay { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
 .admissions-overlay { background: linear-gradient(90deg, color-mix(in oklab, var(--deep) 96%, transparent), color-mix(in oklab, var(--primary) 80%, transparent)); }
-.admissions-content { position: relative; z-index: 2; min-height: 24rem; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3rem; color: var(--primary-foreground); }
-.admissions-content h2 { margin: .4rem 0 .8rem; font-family: var(--font-display); font-size: clamp(2.4rem, 4vw, 4rem); line-height: 1.08; }
+.admissions-content { position: relative; z-index: 2; min-height: 15rem; padding: 3rem 0; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2.5rem; color: var(--primary-foreground); }
+.admissions-content h2 { margin: .4rem 0 .8rem; font-family: var(--font-display); font-size: clamp(1.75rem, 2.8vw, 2.75rem); line-height: 1.15; font-weight: 800; }
 .admissions-content > div > p:last-child { color: color-mix(in oklab, var(--primary-foreground) 75%, transparent); }
 
 .site-footer { padding-top: 4.5rem; background: color-mix(in oklab, var(--deep) 92%, black); color: color-mix(in oklab, var(--primary-foreground) 75%, transparent); }
 .footer-grid { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 3rem; padding-bottom: 3.5rem; }
 .footer-brand img { background: var(--card); border-radius: .75rem; padding: .6rem; }
-.footer-brand p { font-size: .8rem; line-height: 1.7; }
-.footer-grid h3 { margin: 0 0 1rem; color: var(--primary-foreground); font-size: .78rem; }
-.footer-grid a, .footer-grid > div > p { display: flex; align-items: center; gap: .5rem; margin: .55rem 0; color: inherit; text-decoration: none; font-size: .7rem; }
+.footer-brand p { font-size: 0.95rem; line-height: 1.6; margin-top: 0.8rem; }
+.footer-grid h3 { margin: 0 0 1.2rem; color: var(--primary-foreground); font-size: 0.95rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
+.footer-grid a, .footer-grid > div > p { display: flex; align-items: center; gap: .6rem; margin: .65rem 0; color: inherit; text-decoration: none; font-size: 0.9rem; line-height: 1.5; }
 .footer-grid a:hover { color: var(--accent); }
-.footer-grid svg { width: .9rem; color: var(--secondary); }
-.footer-bottom { border-top: 1px solid color-mix(in oklab, var(--primary-foreground) 12%, transparent); padding-block: 1.2rem; display: flex; justify-content: space-between; font-size: .62rem; }
+.footer-grid svg { width: 1.1rem; height: 1.1rem; flex-shrink: 0; color: var(--secondary); }
+.footer-bottom { border-top: 1px solid color-mix(in oklab, var(--primary-foreground) 12%, transparent); padding-block: 1.2rem; display: flex; justify-content: space-between; font-size: 0.85rem; }
 .footer-bottom div { display: flex; gap: 1rem; }
 .footer-bottom a { color: inherit; text-decoration: none; }
 .brand-stripe { display: grid; grid-template-columns: 1fr 1fr 1fr; height: .35rem; }

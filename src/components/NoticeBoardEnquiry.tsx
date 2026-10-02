@@ -141,8 +141,8 @@ export function NoticeBoardEnquiry() {
               {/* Form & Text Column */}
               <div className="md:col-span-7 lg:col-span-7 flex flex-col justify-center">
                 <div className="mb-4 sm:mb-6">
-                  <div className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[#cbfb33] font-extrabold text-[11px] sm:text-xs tracking-wide uppercase mb-2 border border-white/15">
-                    <Sparkles className="w-3.5 h-3.5 fill-[#cbfb33]" />
+                  <div className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[#4ade80] font-extrabold text-[11px] sm:text-xs tracking-wide uppercase mb-2 border border-white/15">
+                    <Sparkles className="w-3.5 h-3.5 fill-[#4ade80] text-[#4ade80]" />
                     <span>Admissions Open 2026-27</span>
                   </div>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-tight">
