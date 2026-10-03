@@ -119,9 +119,9 @@ export function EkatvaStoryInspiresSection() {
       data-reveal
     >
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center reveal-list" data-reveal>
           {/* ================= LEFT COLUMN: STORY CONTENT & PILLARS ================= */}
-          <div className="lg:col-span-6 flex flex-col justify-center reveal-list">
+          <div className="lg:col-span-6 flex flex-col justify-center reveal-list" data-reveal>
             {/* Main Heading */}
             <h2 className="text-[clamp(1.75rem,2.8vw,2.75rem)] font-black text-white tracking-tight leading-tight mb-4">
               Ekatva EM School,<br />
@@ -140,7 +140,7 @@ export function EkatvaStoryInspiresSection() {
 
             {/* 4 Pillars Card Container */}
             <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-2xl p-4 sm:p-5 mb-6 text-slate-900">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 divide-y md:divide-y-0 md:divide-x divide-slate-200/80">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 divide-y md:divide-y-0 md:divide-x divide-slate-200/80 reveal-list" data-reveal>
                 {pillars.map(({ title, subtitle, icon: Icon, color }, idx) => (
                   <div
                     key={title}

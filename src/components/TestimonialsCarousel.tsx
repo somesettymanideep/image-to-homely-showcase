@@ -106,7 +106,7 @@ export function TestimonialsCarousel() {
       style={{ backgroundColor: "#f5f9fd" }}
       data-reveal
     >
-      <div className="testimonials-story-shell reveal-list">
+      <div className="testimonials-story-shell reveal-list" data-reveal>
         <div className="testimonial-story-left">
           <div className="testimonial-story-image">
             <img src={storyImage} alt="An Ekatva parent with her daughter on campus" loading="lazy" width="1200" height="912" />
@@ -157,7 +157,7 @@ export function TestimonialsCarousel() {
 
           {/* Embla Viewport */}
           <div className="testimonial-viewport" ref={emblaRef}>
-            <div className="testimonial-track">
+            <div className="testimonial-track reveal-list" data-reveal>
               {testimonials.map((item) => (
                 <div key={item.id} className="testimonial-slide">
                   <article className="testimonial-story-card">

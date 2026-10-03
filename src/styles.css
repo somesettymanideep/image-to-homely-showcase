@@ -73,16 +73,20 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .reveal-section { opacity: 0; transform: translateY(2.25rem); transition: opacity .85s cubic-bezier(.22, 1, .36, 1), transform .85s cubic-bezier(.22, 1, .36, 1); transition-delay: .08s; }
 .reveal-section.reveal-delay-1 { transition-delay: .18s; }
 .reveal-section.is-visible { opacity: 1; transform: translateY(0); }
-.reveal-list > * { opacity: 0; transform: translateY(1.4rem); transition: opacity .65s cubic-bezier(.22, 1, .36, 1), transform .65s cubic-bezier(.22, 1, .36, 1); }
-.reveal-section.is-visible.reveal-list > *, .reveal-section.is-visible .reveal-list > * { opacity: 1; transform: translateY(0); }
-.reveal-section.is-visible .reveal-list > :nth-child(1), .reveal-section.is-visible.reveal-list > :nth-child(1) { transition-delay: .12s; }
-.reveal-section.is-visible .reveal-list > :nth-child(2), .reveal-section.is-visible.reveal-list > :nth-child(2) { transition-delay: .22s; }
-.reveal-section.is-visible .reveal-list > :nth-child(3), .reveal-section.is-visible.reveal-list > :nth-child(3) { transition-delay: .32s; }
-.reveal-section.is-visible .reveal-list > :nth-child(4), .reveal-section.is-visible.reveal-list > :nth-child(4) { transition-delay: .42s; }
-.reveal-section.is-visible .reveal-list > :nth-child(5), .reveal-section.is-visible.reveal-list > :nth-child(5) { transition-delay: .52s; }
-.reveal-section.is-visible .reveal-list > :nth-child(6), .reveal-section.is-visible.reveal-list > :nth-child(6) { transition-delay: .62s; }
-.reveal-section.is-visible .reveal-list > :nth-child(7), .reveal-section.is-visible.reveal-list > :nth-child(7) { transition-delay: .72s; }
-.reveal-section.is-visible .reveal-list > :nth-child(8), .reveal-section.is-visible.reveal-list > :nth-child(8) { transition-delay: .82s; }
+.reveal-list > * { opacity: 0; transform: translateY(1.4rem); transition: opacity .65s cubic-bezier(.22, 1, .36, 1), transform .65s cubic-bezier(.22, 1, .36, 1); will-change: opacity, transform; }
+.reveal-list.is-visible > * { opacity: 1; transform: translateY(0); }
+.reveal-list.is-visible > :nth-child(1) { transition-delay: .1s; }
+.reveal-list.is-visible > :nth-child(2) { transition-delay: .18s; }
+.reveal-list.is-visible > :nth-child(3) { transition-delay: .26s; }
+.reveal-list.is-visible > :nth-child(4) { transition-delay: .34s; }
+.reveal-list.is-visible > :nth-child(5) { transition-delay: .42s; }
+.reveal-list.is-visible > :nth-child(6) { transition-delay: .5s; }
+.reveal-list.is-visible > :nth-child(7) { transition-delay: .58s; }
+.reveal-list.is-visible > :nth-child(8) { transition-delay: .66s; }
+.reveal-list.is-visible > :nth-child(9) { transition-delay: .74s; }
+.reveal-list.is-visible > :nth-child(10) { transition-delay: .82s; }
+.reveal-list.is-visible > :nth-child(11) { transition-delay: .9s; }
+.reveal-list.is-visible > :nth-child(n+12) { transition-delay: .98s; }
 
 .top-marquee { overflow: hidden; background: #0041b0; color: var(--primary-foreground); }
 .marquee-track { display: flex; width: max-content; animation: marquee-scroll 42s linear infinite; }
@@ -105,6 +109,32 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .nav-apply svg, .cta-button svg, .text-link svg { transition: transform .2s; }
 .nav-apply:hover svg, .cta-button:hover svg, .text-link:hover svg { transform: translateX(4px); }
 .mobile-menu-button, .mobile-nav { display: none; }
+
+.scroll-top {
+  position: fixed;
+  right: clamp(1rem, 2.6vw, 2.2rem);
+  bottom: clamp(1.1rem, 2.6vw, 2.2rem);
+  z-index: 60;
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: 0 12px 30px color-mix(in oklab, var(--deep) 30%, transparent);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(1rem);
+  transition: opacity .4s cubic-bezier(.22, 1, .36, 1), transform .4s cubic-bezier(.22, 1, .36, 1), visibility .4s, background .2s;
+}
+.scroll-top svg { width: 1.15rem; transition: transform .2s; }
+.scroll-top-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.scroll-top:hover { background: var(--secondary); }
+.scroll-top:hover svg { transform: translateY(-3px); }
+@media (max-width: 640px) { .scroll-top { width: 2.6rem; height: 2.6rem; } }
 
 .hero-section { position: relative; min-height: min(39rem, 76vh); height: 39rem; overflow: hidden; }
 .hero-image, .hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; }

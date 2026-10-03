@@ -121,7 +121,7 @@ export function EventsCelebrationsCarousel() {
 
       <div className="section-shell relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 reveal-list">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 reveal-list" data-reveal>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#003494] tracking-tight font-display italic">
             Events &amp; Celebrations
           </h2>
@@ -157,7 +157,7 @@ export function EventsCelebrationsCarousel() {
 
           {/* Embla Carousel viewport */}
           <div className="overflow-hidden rounded-2xl p-1" ref={emblaRef}>
-            <div className="flex -ml-4">
+            <div className="flex -ml-4 reveal-list" data-reveal>
               {defaultEvents.map((event) => (
                 <div
                   key={event.id}
@@ -208,7 +208,7 @@ export function EventsCelebrationsCarousel() {
         </div>
 
         {/* View All Events Green Button */}
-        <div className="mt-8 text-center reveal-list">
+        <div className="mt-8 text-center reveal-list" data-reveal>
           <button
             type="button"
             onClick={() => toast.info("Viewing all school events & celebrations")}

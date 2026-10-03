@@ -111,7 +111,7 @@ export function FacilitiesSection() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* ================= LEFT COLUMN: INTRO & CTA ================= */}
-          <div className="lg:col-span-4 flex flex-col justify-center reveal-list">
+          <div className="lg:col-span-4 flex flex-col justify-center reveal-list" data-reveal>
             {/* Eyebrow badge */}
             <div className="inline-flex items-center gap-2 mb-2">
               <span className="w-8 h-1 bg-[#16a34a] rounded-full" />
@@ -142,8 +142,8 @@ export function FacilitiesSection() {
           </div>
 
           {/* ================= RIGHT COLUMN: 8 FACILITIES CARDS GRID ================= */}
-          <div className="lg:col-span-8 reveal-list">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4">
+          <div className="lg:col-span-8 reveal-list" data-reveal>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4 reveal-list" data-reveal>
               {facilityList.map((facility) => {
                 const IconComponent = facility.icon;
                 return (
