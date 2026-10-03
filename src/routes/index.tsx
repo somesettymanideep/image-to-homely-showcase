@@ -125,7 +125,10 @@ function HomePage() {
   }, [advanceHeroSlide]);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+      setShowTop(window.scrollY > 560);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -294,6 +297,15 @@ function HomePage() {
         <div className="section-shell footer-bottom reveal-list" data-reveal><p>© 2026 Ekatva EM School. All Rights Reserved.</p><div><a href="#contact">Privacy Policy</a><a href="#contact">Terms & Conditions</a></div></div>
         <div className="brand-stripe"><span /><span /><span /></div>
       </footer>
+
+      <button
+        type="button"
+        aria-label="Scroll back to top"
+        className={`scroll-top ${showTop ? "scroll-top-visible" : ""}`}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        <ArrowUp />
+      </button>
     </main>
   );
 }
