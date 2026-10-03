@@ -8,6 +8,7 @@ import { EkatvaStoryInspiresSection } from "@/components/EkatvaStoryInspiresSect
 import { FacilitiesSection } from "@/components/FacilitiesSection";
 import {
   ArrowRight,
+  ArrowUp,
   BookOpen,
   CalendarDays,
   Camera,
@@ -108,6 +109,7 @@ const heroImages = [
 function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showTop, setShowTop] = useState(false);
   const [heroSlide, setHeroSlide] = useState(0);
   const heroTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
