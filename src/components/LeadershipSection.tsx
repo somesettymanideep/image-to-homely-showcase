@@ -81,7 +81,7 @@ export function LeadershipSection() {
 
       <div className="section-shell relative z-10">
         {/* Header Layout */}
-        <div className="flex flex-col items-center text-center mb-10 sm:mb-14 reveal-list">
+        <div className="flex flex-col items-center text-center mb-10 sm:mb-14 reveal-list" data-reveal>
           {/* Eyebrow badge with green/red side pill lines */}
           <div className="inline-flex items-center gap-2 mb-2">
             <span className="w-6 h-0.5 bg-[#16a34a] rounded-full" />
@@ -101,7 +101,7 @@ export function LeadershipSection() {
         </div>
 
         {/* Cards Container */}
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-6 reveal-list" data-reveal>
           {/* Leader Cards */}
           {leaders.map((leader) => {
             const IconComponent = leader.icon;
