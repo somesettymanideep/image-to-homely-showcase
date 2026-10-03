@@ -205,7 +205,7 @@ export function EkatvaAchieversSection() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
-        <div className="relative text-center mb-10 sm:mb-14 reveal-list">
+        <div className="relative text-center mb-10 sm:mb-14 reveal-list" data-reveal>
           {/* Eyebrow badge */}
           <div className="inline-flex items-center justify-center gap-2 mb-2">
             <span className="w-8 h-1 bg-[#16a34a] rounded-full" />
@@ -268,7 +268,7 @@ export function EkatvaAchieversSection() {
 
           {/* Embla Viewport */}
           <div className="overflow-hidden p-1.5" ref={emblaRef}>
-            <div className="flex -ml-4 sm:-ml-6">
+            <div className="flex -ml-4 sm:-ml-6 reveal-list" data-reveal>
               {/* Achievers Cards */}
               {achieversList.map((item) => {
                 if (item.isHero) {
@@ -392,8 +392,8 @@ export function EkatvaAchieversSection() {
         </div>
 
         {/* Statistics Bar Container */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-xl p-6 sm:p-8 mb-10 reveal-list">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-200/80">
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-xl p-6 sm:p-8 mb-10 reveal-list" data-reveal>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-200/80 reveal-list" data-reveal>
             {stats.map(({ number, label, icon: Icon, color }, idx) => (
               <div
                 key={label}
@@ -420,7 +420,7 @@ export function EkatvaAchieversSection() {
         </div>
 
         {/* Bottom CTA Action Button */}
-        <div className="text-center">
+        <div className="text-center reveal-list" data-reveal>
           <button
             type="button"
             onClick={() => toast.info("Navigating to all student achievers")}

@@ -47,7 +47,7 @@ export function NoticeBoardEnquiry() {
   return (
     <section id="notice-board" className="py-0 sm:py-2 bg-slate-50/60 scroll-mt-20 reveal-section" data-reveal>
       <div className="section-shell">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch reveal-list">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch reveal-list" data-reveal>
           {/* ================= LEFT SIDE: NOTICE BOARD ================= */}
           <div className="lg:col-span-5 bg-white rounded-2xl sm:rounded-3xl px-5 sm:px-7 md:px-8 py-2 sm:py-3 md:py-4 border border-slate-200/90 shadow-lg shadow-slate-200/50 flex flex-col justify-between transition-all">
             <div>
@@ -73,7 +73,7 @@ export function NoticeBoardEnquiry() {
               </div>
 
               {/* List of Notices */}
-              <div className="space-y-2.5 sm:space-y-3.5">
+              <div className="space-y-2.5 sm:space-y-3.5 reveal-list" data-reveal>
                 {defaultNotices.map((notice) => {
                   const isSelected = activeNotice === notice.id;
                   return (
@@ -137,7 +137,7 @@ export function NoticeBoardEnquiry() {
             <div className="absolute -right-16 -top-16 w-72 h-72 rounded-full bg-blue-400/20 blur-3xl pointer-events-none" />
             <div className="absolute -left-16 -bottom-16 w-72 h-72 rounded-full bg-emerald-400/15 blur-3xl pointer-events-none" />
 
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center h-full">
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center h-full reveal-list" data-reveal>
               {/* Form & Text Column */}
               <div className="md:col-span-7 lg:col-span-7 flex flex-col justify-center">
                 <div className="mb-4 sm:mb-6">
@@ -174,7 +174,7 @@ export function NoticeBoardEnquiry() {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-3.5">
+                  <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-3.5 reveal-list" data-reveal>
                     {/* Parent Name */}
                     <div className="relative">
                       <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">

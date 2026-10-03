@@ -191,7 +191,7 @@ function HomePage() {
           />
         ))}
         <div className="hero-shade" />
-        <div className="hero-content reveal-list">
+        <div className="hero-content reveal-list" data-reveal>
           <p className="hero-eyebrow"><span /> LEARN <i /> GROW <i /> ACHIEVE</p>
           <h1>The Genesis of<br /><strong>Ekatva EM School</strong></h1>
           <p className="hero-copy">Nurturing young minds with values, knowledge and confidence for a brighter future.</p>
@@ -217,7 +217,7 @@ function HomePage() {
       </section>
 
       <section className="stats-wrap reveal-section reveal-delay-1" data-reveal aria-label="School achievements">
-        <div className="stats-bar reveal-list">
+        <div className="stats-bar reveal-list" data-reveal>
           {stats.map(({ value, label, icon: Icon }) => (
             <article className="stat" key={label}><Icon /><strong>{value}</strong><span>{label}</span></article>
           ))}
@@ -253,11 +253,11 @@ function HomePage() {
       <FacilitiesSection />
 
       <section id="campus-life" className="section-shell gallery-section reveal-section" data-reveal>
-        <div className="gallery-intro reveal-list">
+        <div className="gallery-intro reveal-list" data-reveal>
           <SectionTitle eyebrow="Campus Life" title="Moments That Inspire" copy="From cultural celebrations to sports events, every moment builds confidence, creativity and lasting memories." />
           <CtaLink>View Gallery</CtaLink>
         </div>
-        <div id="gallery" className="masonry-gallery reveal-list">
+        <div id="gallery" className="masonry-gallery reveal-list" data-reveal>
           <figure className="gallery-feature"><img src={cultureImage} alt="Students performing at the cultural festival" loading="lazy" width="1600" height="1200" /><figcaption>Cultural Celebrations <ArrowRight /></figcaption></figure>
           <figure><img src={campusImage} alt="Students enjoying campus life" loading="lazy" width="1408" height="1008" /><figcaption>Campus Life <ArrowRight /></figcaption></figure>
           <figure><img src={classroomImage} alt="Creative classroom learning" loading="lazy" width="1408" height="1008" /><figcaption>Classroom Joy <ArrowRight /></figcaption></figure>
@@ -276,20 +276,20 @@ function HomePage() {
       <section id="admissions" className="admissions-banner reveal-section reveal-delay-1" data-reveal>
         <img src={heroImage} alt="" loading="lazy" width="1920" height="1088" />
         <div className="admissions-overlay" />
-        <div className="section-shell admissions-content reveal-list">
+        <div className="section-shell admissions-content reveal-list" data-reveal>
           <div><p className="eyebrow eyebrow-light"><span />Admissions Open · 2026–27</p><h2>Give Your Child the Best<br />Learning Experience</h2><p>Join Ekatva EM School and open the door to a brighter future.</p></div>
           <CtaLink inverse>Apply Now</CtaLink>
         </div>
       </section>
 
       <footer id="contact" className="site-footer reveal-section" data-reveal>
-        <div className="section-shell footer-grid reveal-list">
+        <div className="section-shell footer-grid reveal-list" data-reveal>
           <div className="footer-brand"><img src={logoUrl} alt="Ekatva EM School" width="160" height="65" /><p>The genesis of excellence.<br />Nurturing young minds.</p></div>
           <div><h3>Quick Links</h3><a href="#home">Home</a><a href="#about">About Us</a><a href="#academics">Academics</a><a href="#campus-life">Campus Life</a><a href="#admissions">Admissions</a></div>
           <div><h3>Explore</h3><a href="#gallery">Gallery</a><a href="#facilities">Facilities</a><a href="#contact">Careers</a><a href="#contact">Contact</a></div>
           <div><h3>Contact Us</h3><p><MapPin />Kanchikacharla, NTR Dist, Andhra Pradesh, 521180</p><p><Phone /><a href="tel:+919908818550">+91 9908818550</a></p><p><Mail /><a href="mailto:info@ekatvaedu.in">info@ekatvaedu.in</a></p></div>
         </div>
-        <div className="section-shell footer-bottom reveal-list"><p>© 2026 Ekatva EM School. All Rights Reserved.</p><div><a href="#contact">Privacy Policy</a><a href="#contact">Terms & Conditions</a></div></div>
+        <div className="section-shell footer-bottom reveal-list" data-reveal><p>© 2026 Ekatva EM School. All Rights Reserved.</p><div><a href="#contact">Privacy Policy</a><a href="#contact">Terms & Conditions</a></div></div>
         <div className="brand-stripe"><span /><span /><span /></div>
       </footer>
     </main>

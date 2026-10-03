@@ -156,7 +156,7 @@ export function TeachersAchievementSection() {
 
       <div className="section-shell relative z-10">
         {/* Header Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start mb-10 sm:mb-14 reveal-list">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start mb-10 sm:mb-14 reveal-list" data-reveal>
           {/* Main Title & Subtitle Column */}
           <div className="lg:col-span-8 text-left lg:text-left">
             {/* Eyebrow badge with green & red side lines */}
@@ -222,7 +222,7 @@ export function TeachersAchievementSection() {
 
           {/* Embla Viewport */}
           <div className="overflow-hidden p-1.5" ref={emblaRef}>
-            <div className="flex -ml-4 sm:-ml-5">
+            <div className="flex -ml-4 sm:-ml-5 reveal-list" data-reveal>
               {achievements.map((item) => {
                 const IconComponent = item.icon;
                 return (
@@ -280,7 +280,7 @@ export function TeachersAchievementSection() {
         </div>
 
         {/* View Teacher Achievement Action Button */}
-        <div className="mt-8 text-center reveal-list">
+        <div className="mt-8 text-center reveal-list" data-reveal>
           <button
             type="button"
             onClick={() => toast.info("Viewing all teacher achievements & awards")}
