@@ -177,22 +177,6 @@ export function TeachersAchievementSection() {
             </p>
           </div>
 
-          {/* Top Right Handwritten Note */}
-          <div className="lg:col-span-4 flex justify-start lg:justify-end items-center">
-            <div className="transform rotate-[3deg] text-right font-display hidden sm:block">
-              <p className="text-[#0047bb] font-extrabold text-base sm:text-lg leading-tight italic">
-                Inspiring Teachers
-              </p>
-              <p className="text-[#0047bb] font-extrabold text-base sm:text-lg leading-tight italic">
-                Building Brighter Futures
-              </p>
-              <div className="flex justify-end gap-1 mt-1">
-                <span className="w-6 h-0.5 bg-[#16a34a] rounded-full" />
-                <span className="w-6 h-0.5 bg-[#e11d48] rounded-full" />
-                <span className="w-6 h-0.5 bg-[#0047bb] rounded-full" />
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Carousel Container */}

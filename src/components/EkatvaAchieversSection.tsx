@@ -223,20 +223,6 @@ export function EkatvaAchieversSection() {
             The snapshots highlight our students' remarkable journey in various fields, showcasing their passion and dedication.
           </p>
 
-          {/* Top Right Handwritten Tagline */}
-          <div className="absolute right-0 top-0 hidden lg:block text-right font-display transform rotate-[-4deg]">
-            <p className="text-[#0047bb] font-extrabold text-base leading-tight italic">
-              Talent Today,
-            </p>
-            <p className="text-[#0047bb] font-extrabold text-base leading-tight italic">
-              Leaders Tomorrow
-            </p>
-            <div className="flex justify-end gap-1 mt-1">
-              <span className="w-4 h-0.5 bg-[#16a34a] rounded-full" />
-              <span className="w-4 h-0.5 bg-[#e11d48] rounded-full" />
-              <span className="w-4 h-0.5 bg-[#0047bb] rounded-full" />
-            </div>
-          </div>
         </div>
 
         {/* Carousel Container */}
