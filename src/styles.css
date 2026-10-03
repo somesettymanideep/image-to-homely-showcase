@@ -102,7 +102,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .site-header-scrolled .nav-shell { height: 4.1rem; border-color: color-mix(in oklab, var(--border) 75%, transparent); }
 .brand-logo img { width: 8.8rem; height: auto; display: block; }
 .desktop-nav { display: flex; justify-content: center; align-items: center; gap: clamp(.8rem, 1.35vw, 1.45rem); min-width: 0; }
-.desktop-nav a { color: var(--foreground); font-size: .74rem; font-weight: 700; text-decoration: none; white-space: nowrap; transition: color .2s; }
+.desktop-nav a { color: var(--foreground); font-size: clamp(.88rem, 1.1vw, 1rem); font-weight: 700; text-decoration: none; white-space: nowrap; transition: color .2s; }
 .desktop-nav a:first-child, .desktop-nav a:hover { color: var(--secondary); }
 .nav-apply, .cta-button { background: var(--secondary); color: var(--secondary-foreground); border: 0; box-shadow: 0 8px 22px color-mix(in oklab, var(--secondary) 24%, transparent); }
 .nav-apply:hover, .cta-button:hover { background: color-mix(in oklab, var(--secondary) 88%, var(--deep)); transform: translateY(-2px); }

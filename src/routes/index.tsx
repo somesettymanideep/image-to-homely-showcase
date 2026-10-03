@@ -205,7 +205,7 @@ function HomePage() {
             <a className="text-link" href="#campus-life">Discover Campus <ArrowRight /></a>
           </div>
         </div>
-        <p className="hero-note">Small steps<br />create big dreams!<span /></p>
+
         <div className="hero-dots" aria-hidden="true">
           {heroImages.map((_, i) => (
             <span
